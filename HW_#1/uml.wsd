@@ -1,0 +1,106 @@
+@startuml name
+title ANSI Terminal-Based Spreadsheet Program
+
+package "Spreadsheet Application" {
+    class Spreadsheet {
+        - cells: vector<vector<Cell>>
+        - terminal: AnsiTerminal
+        + Spreadsheet(r: int = 1, c: int = 1)
+        + getCell(r: int, c: int): Cell*
+        + getRowCount(): int
+        + getColCount(): int
+        + getContentAsString(r: int, c: int): string
+        + getLetterRepresentation(r: int, c: int): string
+        + getCellsInRange(startPos: pair<int, int>, endPos: pair<int, int>): vector<Cell*>
+        + displayScreen(currentRow: int, currentCol: int, inputLine: string = "")
+        + run(): void
+        - getColumnLabel(columnIndex: int): string
+        - getCellLabel(r: int, c: int): string
+        - moveCell(currentRow: int&, currentCol: int&, dir: char): void
+    }
+
+    class Cell {
+        - content: CellContent
+        - formula: string
+        - letterRepresentation: string
+        - row: int
+        - col: int
+        - dependentCells: vector<pair<int, int>>
+        + Cell(r: int = 0, c: int = 0)
+        + setContent(value: string): void
+        + setContent(value: double): void
+        + setContent(value: int): void
+        + setContent(input: string, parser: FormulaParser, cellCoords: pair<int, int>): void
+        + getContent(): CellContent
+        + setFormula(formula: string, dependentCells: vector<pair<int, int>>): void
+        + getFormula(): string
+        + getCoordinates(): pair<int, int>
+        + getDependentCells(): vector<pair<int, int>>&
+        + getRow(): int
+        + getCol(): int
+        + getLetterTransformation(): string
+        + setLetterRepresentation(rep: string): void
+        + getLetterRepresentation(): string
+        + getContentAsString(): string
+        - tryParseToInt(input: string, output: int): bool
+        - tryParseToDouble(input: string, output: double): bool
+    }
+
+    class FileHandler {
+        + saveToFile(filename: string, spreadsheet: Spreadsheet): void
+        + loadFromFile(filename: string, spreadsheet: Spreadsheet): void
+        - isInteger(str: string): bool
+        - isDouble(str: string): bool
+    }
+
+    class FormulaParser {
+        - spreadsheet: Spreadsheet&
+        + FormulaParser(spreadsheet: Spreadsheet&)
+        + parseAndEvaluate(formula: string, coordinates: pair<int, int>): double
+        + autoCalculate(coordinate: pair<int, int>): void
+        - parsePlusAndMinus(formula: string): vector<string>
+        - parseMultpAndDiv(token: string): vector<string>
+        - evaluateMultpAndDivToken(token: string, uniqueDependents: set<pair<int, int>>): double
+        - isValidRange(range: string): bool
+        - getCellReference(token: string): pair<int, int>
+        - getFunctionType(token: string): FunctionType
+        - isValue(token: string): bool
+        - evaluateSingleToken(singleToken: string, uniqueDependents: set<pair<int, int>>): double
+        - SUM(startPos: pair<int, int>, endPos: pair<int, int>, uniqueDependents: set<pair<int, int>>): double
+        - AVER(startPos: pair<int, int>, endPos: pair<int, int>, uniqueDependents: set<pair<int, int>>): double
+        - STDDEV(startPos: pair<int, int>, endPos: pair<int, int>, uniqueDependents: set<pair<int, int>>): double
+        - MAX(startPos: pair<int, int>, endPos: pair<int, int>, uniqueDependents: set<pair<int, int>>): double
+        - MIN(startPos: pair<int, int>, endPos: pair<int, int>, uniqueDependents: set<pair<int, int>>): double
+    }
+
+    enum FunctionType {
+        SUM
+        AVER
+        STDDEV
+        MAX
+        MIN
+        INVALID
+    }
+
+    class AnsiTerminal {
+        - original_tio: termios
+        + AnsiTerminal()
+        + ~AnsiTerminal()
+        + printAt(row: int, col: int, text: string): void
+        + printInvertedAt(row: int, col: int, text: string): void
+        + clearScreen(): void
+        + getKeystroke(): char
+        + getSpecialKey(): char
+        + isArrowKey(ch: char): bool
+    }
+}
+
+Spreadsheet "1" *-- "1..*" Cell : contains
+Spreadsheet "1" *-- "1" FormulaParser : uses
+Spreadsheet "1" *-- "1" AnsiTerminal : uses
+Spreadsheet "1" *-- "1" FileHandler : interacts with
+Cell "1" *-- "0..*" Cell : references
+FormulaParser "1" *-- "1" Spreadsheet : processes
+FormulaParser *-- FunctionType
+
+@enduml
