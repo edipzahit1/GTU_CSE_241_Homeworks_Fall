@@ -1,0 +1,175 @@
+\doxysection{spc\+::myset\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classspc_1_1myset}{}\label{classspc_1_1myset}\index{spc::myset$<$ T $>$@{spc::myset$<$ T $>$}}
+
+
+A custom implementation of a set container that prevents duplicate elements.  
+
+
+
+
+{\ttfamily \#include $<$myset.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classspc_1_1myset_af5e670ea19b9d56b374a2cbf9612f2bc}\label{classspc_1_1myset_af5e670ea19b9d56b374a2cbf9612f2bc} 
+{\bfseries myset} ()=default
+\begin{DoxyCompactList}\small\item\em Default constructor for myset. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classspc_1_1myset_abf75be53bc0f6b161838e50212d5a4ef}{insert}} (const T \&value)
+\begin{DoxyCompactList}\small\item\em Inserts a value into the set if it is not already present. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classspc_1_1myset_ae7aa8126a2c68b49f876f2dc8204147e}{find}} (const T \&value) const
+\begin{DoxyCompactList}\small\item\em Checks if a value exists in the set. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classspc_1_1myset_a8972d39edf5b6b16afbceed45b351256}{size}} () const
+\begin{DoxyCompactList}\small\item\em Gets the number of elements in the set. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classspc_1_1myset_a72a7e1da1cd34eeb5d3ef4e8c0e64771}{empty}} () const
+\begin{DoxyCompactList}\small\item\em Checks if the set is empty. \end{DoxyCompactList}\item 
+\Hypertarget{classspc_1_1myset_a3775e0f36d7daca602ade6c713ec1149}\label{classspc_1_1myset_a3775e0f36d7daca602ade6c713ec1149} 
+void {\bfseries clear} ()
+\begin{DoxyCompactList}\small\item\em Clears all elements from the set. \end{DoxyCompactList}\item 
+T \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classspc_1_1myset_a847752f24568a66e7870500e23dc1117}{begin}} ()
+\begin{DoxyCompactList}\small\item\em Returns an iterator to the beginning of the set. \end{DoxyCompactList}\item 
+T \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classspc_1_1myset_a5ccdb33ac5429f0a2d059be23312943f}{end}} ()
+\begin{DoxyCompactList}\small\item\em Returns an iterator to the end of the set. \end{DoxyCompactList}\item 
+const T \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classspc_1_1myset_a9d573e6c303dbb82c9e95be9070cda51}{begin}} () const
+\begin{DoxyCompactList}\small\item\em Returns a constant iterator to the beginning of the set. \end{DoxyCompactList}\item 
+const T \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classspc_1_1myset_a3589f8279a46de1363439698088c042b}{end}} () const
+\begin{DoxyCompactList}\small\item\em Returns a constant iterator to the end of the set. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class spc\+::myset$<$ T $>$}
+A custom implementation of a set container that prevents duplicate elements. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of elements stored in the set. \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classspc_1_1myset_a847752f24568a66e7870500e23dc1117}\label{classspc_1_1myset_a847752f24568a66e7870500e23dc1117} 
+\index{spc::myset$<$ T $>$@{spc::myset$<$ T $>$}!begin@{begin}}
+\index{begin@{begin}!spc::myset$<$ T $>$@{spc::myset$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classspc_1_1myset}{spc\+::myset}}$<$ T $>$\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns an iterator to the beginning of the set. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the first element in the set. 
+\end{DoxyReturn}
+\Hypertarget{classspc_1_1myset_a9d573e6c303dbb82c9e95be9070cda51}\label{classspc_1_1myset_a9d573e6c303dbb82c9e95be9070cda51} 
+\index{spc::myset$<$ T $>$@{spc::myset$<$ T $>$}!begin@{begin}}
+\index{begin@{begin}!spc::myset$<$ T $>$@{spc::myset$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+const T \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classspc_1_1myset}{spc\+::myset}}$<$ T $>$\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns a constant iterator to the beginning of the set. 
+
+\begin{DoxyReturn}{Returns}
+Constant pointer to the first element in the set. 
+\end{DoxyReturn}
+\Hypertarget{classspc_1_1myset_a72a7e1da1cd34eeb5d3ef4e8c0e64771}\label{classspc_1_1myset_a72a7e1da1cd34eeb5d3ef4e8c0e64771} 
+\index{spc::myset$<$ T $>$@{spc::myset$<$ T $>$}!empty@{empty}}
+\index{empty@{empty}!spc::myset$<$ T $>$@{spc::myset$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{empty()}{empty()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool \mbox{\hyperlink{classspc_1_1myset}{spc\+::myset}}$<$ T $>$\+::empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Checks if the set is empty. 
+
+\begin{DoxyReturn}{Returns}
+True if the set is empty, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classspc_1_1myset_a5ccdb33ac5429f0a2d059be23312943f}\label{classspc_1_1myset_a5ccdb33ac5429f0a2d059be23312943f} 
+\index{spc::myset$<$ T $>$@{spc::myset$<$ T $>$}!end@{end}}
+\index{end@{end}!spc::myset$<$ T $>$@{spc::myset$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{end()}{end()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classspc_1_1myset}{spc\+::myset}}$<$ T $>$\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns an iterator to the end of the set. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to one past the last element in the set. 
+\end{DoxyReturn}
+\Hypertarget{classspc_1_1myset_a3589f8279a46de1363439698088c042b}\label{classspc_1_1myset_a3589f8279a46de1363439698088c042b} 
+\index{spc::myset$<$ T $>$@{spc::myset$<$ T $>$}!end@{end}}
+\index{end@{end}!spc::myset$<$ T $>$@{spc::myset$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{end()}{end()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+const T \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classspc_1_1myset}{spc\+::myset}}$<$ T $>$\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns a constant iterator to the end of the set. 
+
+\begin{DoxyReturn}{Returns}
+Constant pointer to one past the last element in the set. 
+\end{DoxyReturn}
+\Hypertarget{classspc_1_1myset_ae7aa8126a2c68b49f876f2dc8204147e}\label{classspc_1_1myset_ae7aa8126a2c68b49f876f2dc8204147e} 
+\index{spc::myset$<$ T $>$@{spc::myset$<$ T $>$}!find@{find}}
+\index{find@{find}!spc::myset$<$ T $>$@{spc::myset$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{find()}{find()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool \mbox{\hyperlink{classspc_1_1myset}{spc\+::myset}}$<$ T $>$\+::find (\begin{DoxyParamCaption}\item[{const T \&}]{value }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Checks if a value exists in the set. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The value to search for. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the value exists in the set, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classspc_1_1myset_abf75be53bc0f6b161838e50212d5a4ef}\label{classspc_1_1myset_abf75be53bc0f6b161838e50212d5a4ef} 
+\index{spc::myset$<$ T $>$@{spc::myset$<$ T $>$}!insert@{insert}}
+\index{insert@{insert}!spc::myset$<$ T $>$@{spc::myset$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classspc_1_1myset}{spc\+::myset}}$<$ T $>$\+::insert (\begin{DoxyParamCaption}\item[{const T \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Inserts a value into the set if it is not already present. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The value to insert. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classspc_1_1myset_a8972d39edf5b6b16afbceed45b351256}\label{classspc_1_1myset_a8972d39edf5b6b16afbceed45b351256} 
+\index{spc::myset$<$ T $>$@{spc::myset$<$ T $>$}!size@{size}}
+\index{size@{size}!spc::myset$<$ T $>$@{spc::myset$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+size\+\_\+t \mbox{\hyperlink{classspc_1_1myset}{spc\+::myset}}$<$ T $>$\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the number of elements in the set. 
+
+\begin{DoxyReturn}{Returns}
+The size of the set. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+myset.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,159 @@
+\doxysection{Formula\+Cell Class Reference}
+\hypertarget{classFormulaCell}{}\label{classFormulaCell}\index{FormulaCell@{FormulaCell}}
+
+
+{\ttfamily \#include $<$Cell.\+h$>$}
+
+
+
+Inheritance diagram for Formula\+Cell\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=155pt]{classFormulaCell__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Formula\+Cell\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=155pt]{classFormulaCell__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classFormulaCell_a84b58979544602974e481b34a1d66487}{Formula\+Cell}} (int r, int c, const std\+::string \&f)
+\item 
+void \mbox{\hyperlink{classFormulaCell_a8c5d22d81b0f488bcb437a3897ef267f}{set\+Calculated\+Value}} (double value)
+\item 
+double \mbox{\hyperlink{classFormulaCell_a41e34ad126b43c1371a32c6ca68e8bab}{get\+Calculated\+Value}} () const
+\item 
+const std\+::string \& \mbox{\hyperlink{classFormulaCell_a835ae4eb7792035555c9da5af63aac24}{get\+Formula}} () const
+\item 
+void \mbox{\hyperlink{classFormulaCell_af10a03732794de12fbbfaadc2d6cd139}{add\+Dependent\+Cell}} (const std\+::pair$<$ int, int $>$ \&coor)
+\item 
+const \mbox{\hyperlink{classspc_1_1myvec}{spc\+::myvec}}$<$ std\+::pair$<$ int, int $>$ $>$ \& \mbox{\hyperlink{classFormulaCell_a10412ca521dedad90291fe3bce4247a1}{fetch\+Dependent\+Cells}} () const
+\item 
+void \mbox{\hyperlink{classFormulaCell_a409bda1ec7fd7cd2ffeafd3097b2c3e5}{clear\+Dependent\+Cells}} ()
+\item 
+std\+::string \mbox{\hyperlink{classFormulaCell_af37e8bbf3616fe567c475b56013c7087}{get\+Value\+As\+String}} () const override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classCell}{Cell}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCell_a5d864179105fe90ff5caed1e100ea15b}{Cell}} (int r, int c)
+\item 
+virtual \mbox{\hyperlink{classCell_a246d54ef2e569f97000fe94f5524e7ba}{\texorpdfstring{$\sim$}{\string~}\+Cell}} ()=default
+\item 
+void \mbox{\hyperlink{classCell_afdef300bb2c5d094486a3719b47f2083}{set\+Letter\+Representation}} (int r, int c)
+\item 
+std\+::string \mbox{\hyperlink{classCell_a43a4a18bf3e09058fe8103949b4d91af}{get\+Letter\+Representation}} () const
+\item 
+int \mbox{\hyperlink{classCell_ac539fe0f0330ca0e437180e1a5b59162}{get\+Row}} () const
+\item 
+int \mbox{\hyperlink{classCell_a25280a2e9a8df8a51092c94737f44d58}{get\+Col}} () const
+\item 
+double \mbox{\hyperlink{classCell_aa41edda20ea178d105fb3d57d379aea4}{get\+Cell\+Value\+As\+Double}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class representing a formula-\/based cell. Stores a formula and its calculated value, and tracks dependent cells. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classFormulaCell_a84b58979544602974e481b34a1d66487}\label{classFormulaCell_a84b58979544602974e481b34a1d66487} 
+\index{FormulaCell@{FormulaCell}!FormulaCell@{FormulaCell}}
+\index{FormulaCell@{FormulaCell}!FormulaCell@{FormulaCell}}
+\doxysubsubsection{\texorpdfstring{FormulaCell()}{FormulaCell()}}
+{\footnotesize\ttfamily Formula\+Cell\+::\+Formula\+Cell (\begin{DoxyParamCaption}\item[{int}]{r,  }\item[{int}]{c,  }\item[{const std\+::string \&}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor for \doxylink{classFormulaCell}{Formula\+Cell}. 
+\begin{DoxyParams}{Parameters}
+{\em r} & Row index. \\
+\hline
+{\em c} & Column index. \\
+\hline
+{\em f} & Formula string. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classFormulaCell_af10a03732794de12fbbfaadc2d6cd139}\label{classFormulaCell_af10a03732794de12fbbfaadc2d6cd139} 
+\index{FormulaCell@{FormulaCell}!addDependentCell@{addDependentCell}}
+\index{addDependentCell@{addDependentCell}!FormulaCell@{FormulaCell}}
+\doxysubsubsection{\texorpdfstring{addDependentCell()}{addDependentCell()}}
+{\footnotesize\ttfamily void Formula\+Cell\+::add\+Dependent\+Cell (\begin{DoxyParamCaption}\item[{const std\+::pair$<$ int, int $>$ \&}]{coor }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Adds a dependent cell to the list. 
+\begin{DoxyParams}{Parameters}
+{\em coor} & Pair representing the dependent cell\textquotesingle{}s coordinates. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classFormulaCell_a409bda1ec7fd7cd2ffeafd3097b2c3e5}\label{classFormulaCell_a409bda1ec7fd7cd2ffeafd3097b2c3e5} 
+\index{FormulaCell@{FormulaCell}!clearDependentCells@{clearDependentCells}}
+\index{clearDependentCells@{clearDependentCells}!FormulaCell@{FormulaCell}}
+\doxysubsubsection{\texorpdfstring{clearDependentCells()}{clearDependentCells()}}
+{\footnotesize\ttfamily void Formula\+Cell\+::clear\+Dependent\+Cells (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Clears the list of dependent cells. \Hypertarget{classFormulaCell_a10412ca521dedad90291fe3bce4247a1}\label{classFormulaCell_a10412ca521dedad90291fe3bce4247a1} 
+\index{FormulaCell@{FormulaCell}!fetchDependentCells@{fetchDependentCells}}
+\index{fetchDependentCells@{fetchDependentCells}!FormulaCell@{FormulaCell}}
+\doxysubsubsection{\texorpdfstring{fetchDependentCells()}{fetchDependentCells()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classspc_1_1myvec}{spc\+::myvec}}$<$ std\+::pair$<$ int, int $>$ $>$ \& Formula\+Cell\+::fetch\+Dependent\+Cells (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Retrieves the list of dependent cells. \begin{DoxyReturn}{Returns}
+Vector of dependent cell coordinates. 
+\end{DoxyReturn}
+\Hypertarget{classFormulaCell_a41e34ad126b43c1371a32c6ca68e8bab}\label{classFormulaCell_a41e34ad126b43c1371a32c6ca68e8bab} 
+\index{FormulaCell@{FormulaCell}!getCalculatedValue@{getCalculatedValue}}
+\index{getCalculatedValue@{getCalculatedValue}!FormulaCell@{FormulaCell}}
+\doxysubsubsection{\texorpdfstring{getCalculatedValue()}{getCalculatedValue()}}
+{\footnotesize\ttfamily double Formula\+Cell\+::get\+Calculated\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Retrieves the calculated value of the formula. \begin{DoxyReturn}{Returns}
+Calculated value as a double. 
+\end{DoxyReturn}
+\Hypertarget{classFormulaCell_a835ae4eb7792035555c9da5af63aac24}\label{classFormulaCell_a835ae4eb7792035555c9da5af63aac24} 
+\index{FormulaCell@{FormulaCell}!getFormula@{getFormula}}
+\index{getFormula@{getFormula}!FormulaCell@{FormulaCell}}
+\doxysubsubsection{\texorpdfstring{getFormula()}{getFormula()}}
+{\footnotesize\ttfamily const std\+::string \& Formula\+Cell\+::get\+Formula (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Retrieves the formula string. \begin{DoxyReturn}{Returns}
+Formula string. 
+\end{DoxyReturn}
+\Hypertarget{classFormulaCell_af37e8bbf3616fe567c475b56013c7087}\label{classFormulaCell_af37e8bbf3616fe567c475b56013c7087} 
+\index{FormulaCell@{FormulaCell}!getValueAsString@{getValueAsString}}
+\index{getValueAsString@{getValueAsString}!FormulaCell@{FormulaCell}}
+\doxysubsubsection{\texorpdfstring{getValueAsString()}{getValueAsString()}}
+{\footnotesize\ttfamily std\+::string Formula\+Cell\+::get\+Value\+As\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Retrieves the cell\textquotesingle{}s value as a string. Formats the value as an integer or double based on precision. \begin{DoxyReturn}{Returns}
+Formatted value string. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCell_a9b851e4caf142ca6fd72ada2e7505b6b}{Cell}}.
+
+\Hypertarget{classFormulaCell_a8c5d22d81b0f488bcb437a3897ef267f}\label{classFormulaCell_a8c5d22d81b0f488bcb437a3897ef267f} 
+\index{FormulaCell@{FormulaCell}!setCalculatedValue@{setCalculatedValue}}
+\index{setCalculatedValue@{setCalculatedValue}!FormulaCell@{FormulaCell}}
+\doxysubsubsection{\texorpdfstring{setCalculatedValue()}{setCalculatedValue()}}
+{\footnotesize\ttfamily void Formula\+Cell\+::set\+Calculated\+Value (\begin{DoxyParamCaption}\item[{double}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the calculated value for the formula. 
+\begin{DoxyParams}{Parameters}
+{\em value} & The new calculated value. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Cell.\+h\end{DoxyCompactItemize}

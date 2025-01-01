@@ -1,0 +1,135 @@
+\doxysection{Sheet\+Handler Class Reference}
+\hypertarget{classSheetHandler}{}\label{classSheetHandler}\index{SheetHandler@{SheetHandler}}
+
+
+A class responsible for handling multiple spreadsheets, including saving, loading, and managing them.  
+
+
+
+
+{\ttfamily \#include $<$Sheet\+Handler.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSheetHandler_ab7489b3ef44b13126576f358da59ca5d}{Sheet\+Handler}} (const std\+::string \&dir\+\_\+path="{}sheets"{})
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classSheetHandler}{Sheet\+Handler} object with an optional directory path. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSheetHandler_aa23e354be7579eddfdf3f1cf033e2235}{add}} (const std\+::string \&filename, \mbox{\hyperlink{classSpreadsheet}{Spreadsheet}} \texorpdfstring{$\ast$}{*}new\+Sheet)
+\begin{DoxyCompactList}\small\item\em Adds a new spreadsheet to the handler. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSheetHandler_aa92efefc8dae70daf7ef92d7467c9048}{save\+Sheet}} (const std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em Saves a spreadsheet to a file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSheetHandler_a5b07e8c04a8b6bacf8cd0da88dca82af}{load\+Sheet}} (const std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em Loads a spreadsheet from a file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSpreadsheet}{Spreadsheet}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classSheetHandler_a908843dda7681931e54fae381ff1cb5a}{get\+Sheet}} (const std\+::string \&filename) const
+\begin{DoxyCompactList}\small\item\em Retrieves a pointer to a spreadsheet by its filename. \end{DoxyCompactList}\item 
+\Hypertarget{classSheetHandler_aa3e41fe3e4a815bddb89473b18fb650b}\label{classSheetHandler_aa3e41fe3e4a815bddb89473b18fb650b} 
+void {\bfseries view\+Saved\+Sheets} () const
+\begin{DoxyCompactList}\small\item\em Displays the list of saved spreadsheets. \end{DoxyCompactList}\item 
+\Hypertarget{classSheetHandler_aa7a177a7254f83717be7fffbedc65f87}\label{classSheetHandler_aa7a177a7254f83717be7fffbedc65f87} 
+void {\bfseries run\+Menu} ()
+\begin{DoxyCompactList}\small\item\em Runs the menu interface for the user to interact with the spreadsheets. \end{DoxyCompactList}\item 
+\Hypertarget{classSheetHandler_a2284bae6ccee68bf88aa25f764063bce}\label{classSheetHandler_a2284bae6ccee68bf88aa25f764063bce} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Sheet\+Handler} ()
+\begin{DoxyCompactList}\small\item\em Destructor that cleans up any dynamically allocated memory. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class responsible for handling multiple spreadsheets, including saving, loading, and managing them. 
+
+The \doxylink{classSheetHandler}{Sheet\+Handler} class allows the user to add, save, load, and view spreadsheets. It also manages a menu for creating and running spreadsheets through user interaction.
+
+\begin{DoxyNote}{Note}
+The spreadsheets are stored in a specified directory (default is "{}sheets"{}). 
+\end{DoxyNote}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classSheetHandler_ab7489b3ef44b13126576f358da59ca5d}\label{classSheetHandler_ab7489b3ef44b13126576f358da59ca5d} 
+\index{SheetHandler@{SheetHandler}!SheetHandler@{SheetHandler}}
+\index{SheetHandler@{SheetHandler}!SheetHandler@{SheetHandler}}
+\doxysubsubsection{\texorpdfstring{SheetHandler()}{SheetHandler()}}
+{\footnotesize\ttfamily Sheet\+Handler\+::\+Sheet\+Handler (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{dir\+\_\+path = {\ttfamily "{}sheets"{}} }\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{classSheetHandler}{Sheet\+Handler} object with an optional directory path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dir\+\_\+path} & The path to the directory where sheets will be stored. Defaults to "{}sheets"{}. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classSheetHandler_aa23e354be7579eddfdf3f1cf033e2235}\label{classSheetHandler_aa23e354be7579eddfdf3f1cf033e2235} 
+\index{SheetHandler@{SheetHandler}!add@{add}}
+\index{add@{add}!SheetHandler@{SheetHandler}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily void Sheet\+Handler\+::add (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename,  }\item[{\mbox{\hyperlink{classSpreadsheet}{Spreadsheet}} \texorpdfstring{$\ast$}{*}}]{new\+Sheet }\end{DoxyParamCaption})}
+
+
+
+Adds a new spreadsheet to the handler. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The name of the spreadsheet to add. \\
+\hline
+{\em new\+Sheet} & A pointer to the new \doxylink{classSpreadsheet}{Spreadsheet} object. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classSheetHandler_a908843dda7681931e54fae381ff1cb5a}\label{classSheetHandler_a908843dda7681931e54fae381ff1cb5a} 
+\index{SheetHandler@{SheetHandler}!getSheet@{getSheet}}
+\index{getSheet@{getSheet}!SheetHandler@{SheetHandler}}
+\doxysubsubsection{\texorpdfstring{getSheet()}{getSheet()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSpreadsheet}{Spreadsheet}} \texorpdfstring{$\ast$}{*} Sheet\+Handler\+::get\+Sheet (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption}) const}
+
+
+
+Retrieves a pointer to a spreadsheet by its filename. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The name of the spreadsheet to retrieve.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the \doxylink{classSpreadsheet}{Spreadsheet} object, or nullptr if not found. 
+\end{DoxyReturn}
+\Hypertarget{classSheetHandler_a5b07e8c04a8b6bacf8cd0da88dca82af}\label{classSheetHandler_a5b07e8c04a8b6bacf8cd0da88dca82af} 
+\index{SheetHandler@{SheetHandler}!loadSheet@{loadSheet}}
+\index{loadSheet@{loadSheet}!SheetHandler@{SheetHandler}}
+\doxysubsubsection{\texorpdfstring{loadSheet()}{loadSheet()}}
+{\footnotesize\ttfamily void Sheet\+Handler\+::load\+Sheet (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})}
+
+
+
+Loads a spreadsheet from a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The name of the file to load the spreadsheet from. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classSheetHandler_aa92efefc8dae70daf7ef92d7467c9048}\label{classSheetHandler_aa92efefc8dae70daf7ef92d7467c9048} 
+\index{SheetHandler@{SheetHandler}!saveSheet@{saveSheet}}
+\index{saveSheet@{saveSheet}!SheetHandler@{SheetHandler}}
+\doxysubsubsection{\texorpdfstring{saveSheet()}{saveSheet()}}
+{\footnotesize\ttfamily void Sheet\+Handler\+::save\+Sheet (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})}
+
+
+
+Saves a spreadsheet to a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The name of the file to save the spreadsheet as. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Sheet\+Handler.\+h\item 
+Sheet\+Handler.\+cpp\end{DoxyCompactItemize}

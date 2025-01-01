@@ -1,0 +1,158 @@
+\doxysection{Cell.\+h}
+\hypertarget{Cell_8h_source}{}\label{Cell_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ CELL\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ CELL\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <iomanip>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}myvec.h"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classCell}{Cell}}}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00017\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{classCell_a5d864179105fe90ff5caed1e100ea15b}{Cell}}(\textcolor{keywordtype}{int}\ r,\ \textcolor{keywordtype}{int}\ c)\ :\ row(r),\ col(c)}
+\DoxyCodeLine{00025\ \ \ \ \ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (row\ <\ 0\ ||\ col\ <\ 0)}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Invalid\ initializer\ for\ Cell\ instance."{}});}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classCell_afdef300bb2c5d094486a3719b47f2083}{setLetterRepresentation}}(r,\ c);}
+\DoxyCodeLine{00029\ \ \ \ \ \}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classCell_a246d54ef2e569f97000fe94f5524e7ba}{\string~Cell}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCell_afdef300bb2c5d094486a3719b47f2083}{setLetterRepresentation}}(\textcolor{keywordtype}{int}\ r,\ \textcolor{keywordtype}{int}\ c);}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00047\ \ \ \ \ std::string\ \mbox{\hyperlink{classCell_a43a4a18bf3e09058fe8103949b4d91af}{getLetterRepresentation}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ letter\_rep;\ \}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classCell_ac539fe0f0330ca0e437180e1a5b59162}{getRow}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ row;\ \}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classCell_a25280a2e9a8df8a51092c94737f44d58}{getCol}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ col;\ \}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classCell_aa41edda20ea178d105fb3d57d379aea4}{getCellValueAsDouble}}();}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keyword}{virtual}\ std::string\ \mbox{\hyperlink{classCell_a9b851e4caf142ca6fd72ada2e7505b6b}{getValueAsString}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00075\ \ \ \ \ std::string\ letter\_rep;\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{int}\ row,\ col;\ }
+\DoxyCodeLine{00077\ \};}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00083\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classFormulaCell}{FormulaCell}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classCell}{Cell}}}
+\DoxyCodeLine{00084\ \{}
+\DoxyCodeLine{00085\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00092\ \ \ \ \ \mbox{\hyperlink{classFormulaCell_a84b58979544602974e481b34a1d66487}{FormulaCell}}(\textcolor{keywordtype}{int}\ r,\ \textcolor{keywordtype}{int}\ c,\ \textcolor{keyword}{const}\ std::string\ \&f)}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classCell}{Cell}}(r,\ c),\ formula(f),\ calculatedValue(0)\ \{\}}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classFormulaCell_a8c5d22d81b0f488bcb437a3897ef267f}{setCalculatedValue}}(\textcolor{keywordtype}{double}\ value)\ \{\ calculatedValue\ =\ value;\ \}}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classFormulaCell_a41e34ad126b43c1371a32c6ca68e8bab}{getCalculatedValue}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ calculatedValue;\ \}}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&\mbox{\hyperlink{classFormulaCell_a835ae4eb7792035555c9da5af63aac24}{getFormula}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ formula;\ \}}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classFormulaCell_af10a03732794de12fbbfaadc2d6cd139}{addDependentCell}}(\textcolor{keyword}{const}\ std::pair<int,\ int>\ \&coor)\ \{\ dependentCells.\mbox{\hyperlink{classspc_1_1myvec_a0b68ed44a36574fa2debb4cff8b38180}{push\_back}}(coor);\ \}}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classspc_1_1myvec}{spc::myvec<std::pair<int,\ int>}}>\ \&\mbox{\hyperlink{classFormulaCell_a10412ca521dedad90291fe3bce4247a1}{fetchDependentCells}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ dependentCells;\ \}}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classFormulaCell_a409bda1ec7fd7cd2ffeafd3097b2c3e5}{clearDependentCells}}()\ \{\ dependentCells.\mbox{\hyperlink{classspc_1_1myvec_a343ef5c16e8e87eca6ccd9c398d627e8}{clear}}();\ \}}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00135\ \ \ \ \ std::string\ \mbox{\hyperlink{classFormulaCell_af37e8bbf3616fe567c475b56013c7087}{getValueAsString}}()\textcolor{keyword}{\ const\ override}}
+\DoxyCodeLine{00136\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ std::ostringstream\ oss;}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (isInteger(calculatedValue))}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ oss\ <<\ std::fixed\ <<\ std::setprecision(0)\ <<\ calculatedValue;}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ oss\ <<\ std::fixed\ <<\ std::setprecision(2)\ <<\ calculatedValue;}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ oss.str();}
+\DoxyCodeLine{00149\ \ \ \ \ \}}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keywordtype}{bool}\ isInteger(\textcolor{keywordtype}{double}\ calculatedValue)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00158\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ calculatedValue\ ==\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(calculatedValue);}
+\DoxyCodeLine{00160\ \ \ \ \ \}}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00162\ \ \ \ \ std::string\ formula;\ }
+\DoxyCodeLine{00163\ \ \ \ \ \textcolor{keywordtype}{double}\ calculatedValue;\ }
+\DoxyCodeLine{00164\ \ \ \ \ \mbox{\hyperlink{classspc_1_1myvec}{spc::myvec<std::pair<int,\ int>}}>\ dependentCells;\ }
+\DoxyCodeLine{00165\ \};}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00171\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classValueCell}{ValueCell}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classCell}{Cell}}}
+\DoxyCodeLine{00172\ \{}
+\DoxyCodeLine{00173\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00179\ \ \ \ \ \mbox{\hyperlink{classValueCell_a49874aeae17d11e4ad7651a6d0aaa1bd}{ValueCell}}(\textcolor{keywordtype}{int}\ r,\ \textcolor{keywordtype}{int}\ c)\ :\ \mbox{\hyperlink{classCell}{Cell}}(r,\ c)\ \{\}}
+\DoxyCodeLine{00180\ }
+\DoxyCodeLine{00184\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classValueCell_ab3fe94daf68872a520d5f85abc5d7463}{\string~ValueCell}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00190\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classValueCell_ad74a0881a4bbc93db158acbfe530a493}{setValue}}(\textcolor{keyword}{const}\ std::string\ \&v)\ =\ 0;}
+\DoxyCodeLine{00191\ \};}
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00196\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classIntValueCell}{IntValueCell}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classValueCell}{ValueCell}}}
+\DoxyCodeLine{00197\ \{}
+\DoxyCodeLine{00198\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00205\ \ \ \ \ \mbox{\hyperlink{classIntValueCell_a69f0bf0e921b5943fdb4af7e2c254b83}{IntValueCell}}(\textcolor{keywordtype}{int}\ r,\ \textcolor{keywordtype}{int}\ c,\ \textcolor{keywordtype}{int}\ value)}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classValueCell}{ValueCell}}(r,\ c),\ val(value)\ \{\}}
+\DoxyCodeLine{00207\ }
+\DoxyCodeLine{00212\ \ \ \ \ std::string\ \mbox{\hyperlink{classIntValueCell_a16800d9bffcf14af8aab43861ee0386e}{getValueAsString}}()\textcolor{keyword}{\ const\ override}}
+\DoxyCodeLine{00213\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::to\_string(val);}
+\DoxyCodeLine{00215\ \ \ \ \ \}}
+\DoxyCodeLine{00216\ }
+\DoxyCodeLine{00221\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classIntValueCell_a51d2903db51f6e83e84fd3056aeb7ff4}{getValue}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ val;\ \}}
+\DoxyCodeLine{00222\ }
+\DoxyCodeLine{00227\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classIntValueCell_aaeebf9651e38fd1cf0d8c02284e0b87e}{setValue}}(\textcolor{keyword}{const}\ std::string\ \&v)\ \{\ val\ =\ std::stoi(v);\ \}}
+\DoxyCodeLine{00228\ }
+\DoxyCodeLine{00229\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00230\ \ \ \ \ \textcolor{keywordtype}{int}\ val;\ }
+\DoxyCodeLine{00231\ \};}
+\DoxyCodeLine{00232\ }
+\DoxyCodeLine{00236\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classStringValueCell}{StringValueCell}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classValueCell}{ValueCell}}}
+\DoxyCodeLine{00237\ \{}
+\DoxyCodeLine{00238\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00245\ \ \ \ \ \mbox{\hyperlink{classStringValueCell_ade488a2b16848c9f921b26323a90eed0}{StringValueCell}}(\textcolor{keywordtype}{int}\ r,\ \textcolor{keywordtype}{int}\ c,\ \textcolor{keyword}{const}\ std::string\ \&value)}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classValueCell}{ValueCell}}(r,\ c),\ val(value)\ \{\}}
+\DoxyCodeLine{00247\ }
+\DoxyCodeLine{00252\ \ \ \ \ std::string\ \mbox{\hyperlink{classStringValueCell_aa1c9a8d6f0b56b8e60718f084b82265c}{getValueAsString}}()\textcolor{keyword}{\ const\ override}}
+\DoxyCodeLine{00253\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ val;}
+\DoxyCodeLine{00255\ \ \ \ \ \}}
+\DoxyCodeLine{00256\ }
+\DoxyCodeLine{00261\ \ \ \ \ std::string\ \mbox{\hyperlink{classStringValueCell_a6d962788d7d403e23bd730585bdfefb0}{getValue}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ val;\ \}}
+\DoxyCodeLine{00262\ }
+\DoxyCodeLine{00267\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classStringValueCell_a9ec439942a0b6ac7c030ed47696336ab}{setValue}}(\textcolor{keyword}{const}\ std::string\ \&v)\ \{\ val\ =\ v;\ \}}
+\DoxyCodeLine{00268\ }
+\DoxyCodeLine{00269\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00270\ \ \ \ \ std::string\ val;\ }
+\DoxyCodeLine{00271\ \};}
+\DoxyCodeLine{00272\ }
+\DoxyCodeLine{00276\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classDoubleValueCell}{DoubleValueCell}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classValueCell}{ValueCell}}}
+\DoxyCodeLine{00277\ \{}
+\DoxyCodeLine{00278\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00285\ \ \ \ \ \mbox{\hyperlink{classDoubleValueCell_a821759871368ec5aec99dbdb12e3ed56}{DoubleValueCell}}(\textcolor{keywordtype}{int}\ r,\ \textcolor{keywordtype}{int}\ c,\ \textcolor{keywordtype}{double}\ value)}
+\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classValueCell}{ValueCell}}(r,\ c),\ val(value)\ \{\}}
+\DoxyCodeLine{00287\ }
+\DoxyCodeLine{00292\ \ \ \ \ std::string\ \mbox{\hyperlink{classDoubleValueCell_a07c5fa871fac86915a9f23a1fb7f3dad}{getValueAsString}}()\textcolor{keyword}{\ const\ override}}
+\DoxyCodeLine{00293\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ std::ostringstream\ oss;}
+\DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ oss\ <<\ val;}
+\DoxyCodeLine{00296\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ oss.str();}
+\DoxyCodeLine{00297\ \ \ \ \ \}}
+\DoxyCodeLine{00298\ }
+\DoxyCodeLine{00303\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classDoubleValueCell_ae2a08f650087cb39e6cff65817ed7e8a}{getValue}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ val;\ \}}
+\DoxyCodeLine{00304\ }
+\DoxyCodeLine{00309\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classDoubleValueCell_aa1428efc7f888197a94cc0d785886244}{setValue}}(\textcolor{keyword}{const}\ std::string\ \&v)\ \{\ val\ =\ std::stod(v);\ \}}
+\DoxyCodeLine{00310\ }
+\DoxyCodeLine{00311\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00312\ \ \ \ \ \textcolor{keywordtype}{double}\ val;\ }
+\DoxyCodeLine{00313\ \};}
+\DoxyCodeLine{00314\ }
+\DoxyCodeLine{00315\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,162 @@
+@startuml spreadsheet
+
+class Cell {
+    - int row
+    - int col
+    - std::string letter_rep
+    + Cell(int r, int c)
+    + ~Cell()
+    + void setLetterRepresentation(int r, int c)
+    + std::string getLetterRepresentation()
+    + int getRow()
+    + int getCol()
+    + double getCellValueAsDouble()
+    + virtual std::string getValueAsString() = 0
+}
+
+class ValueCell {
+    + ValueCell(int r, int c)
+    + ~ValueCell()
+    + virtual void setValue(const std::string &v) = 0
+    + virtual std::string getValueAsString()
+}
+
+class IntValueCell {
+    - int val
+    + IntValueCell(int r, int c, int value)
+    + void setValue(const std::string &v)
+    + std::string getValueAsString()
+    + int getValue()
+}
+
+class StringValueCell {
+    - std::string val
+    + StringValueCell(int r, int c, const std::string &value)
+    + void setValue(const std::string &v)
+    + std::string getValueAsString()
+    + std::string getValue()
+}
+
+class DoubleValueCell {
+    - double val
+    + DoubleValueCell(int r, int c, double value)
+    + void setValue(const std::string &v)
+    + std::string getValueAsString()
+    + double getValue()
+}
+
+class FormulaCell {
+    - std::string formula
+    - double calculatedValue
+    - spc::myvec<std::pair<int, int>> dependentCells
+    + FormulaCell(int r, int c, const std::string &f)
+    + void setCalculatedValue(double value)
+    + double getCalculatedValue()
+    + const std::string &getFormula()
+    + void addDependentCell(const std::pair<int, int> &coor)
+    + const spc::myvec<std::pair<int, int>> &fetchDependentCells()
+    + void clearDependentCells()
+    + std::string getValueAsString()
+}
+
+class Spreadsheet {
+    - spc::myvec<spc::myvec<std::unique_ptr<Cell>>> cells
+    - AnsiTerminal terminal
+    - FormulaParser parser
+    - void expand(int newRowCount, int newColCount)
+    + static const int MAX_ROWS
+    + static const int MAX_COLS
+    + Spreadsheet(int rows = 3, int cols = 3)
+    + Cell* getCell(int r, int c) const
+    + void setCell(int r, int c, std::unique_ptr<Cell> cell)
+    + void enterData(int r, int c, std::string input)
+    + int getRowCount()
+    + int getColCount()
+    + spc::myvec<Cell*> getCellsInRange(std::pair<int, int> startPos, std::pair<int, int> endPos)
+    + void displayScreen(int currentRow, int currentCol, std::string inputLine = "")
+    + void run()
+    + friend class FileHandler
+}
+
+class SheetHandler {
+    - std::unordered_map<std::string, Spreadsheet*> sheets
+    - FileHandler handler
+    - const std::string directory_path
+    - void displayMenu() const
+    - void handleCreate()
+    - void handleRun()
+    + SheetHandler(const std::string& dir_path = "sheets")
+    + void add(const std::string& filename, Spreadsheet* newSheet)
+    + void saveSheet(const std::string& filename)
+    + void loadSheet(const std::string& filename)
+    + Spreadsheet* getSheet(const std::string& filename) const
+    + void viewSavedSheets() const
+    + void runMenu()
+    + ~SheetHandler()
+}
+
+class FormulaParser {
+    - Spreadsheet &spreadsheet
+    + FormulaParser(Spreadsheet &sheet)
+    + double parseAndEvaluate(std::string &formula, std::pair<int, int> coordinates, spc::myvec<std::pair<int, int>> &dependentCells)
+    + void autoCalculate(std::pair<int, int> coordinate)
+    + spc::myvec<std::string> parsePlusAndMinus(const std::string &formula) const
+    + spc::myvec<std::string> parseMultpAndDiv(const std::string &token) const
+    + double evaluateMultpAndDivToken(std::string &token, spc::myset<std::pair<int, int>> &uniqueDependents) const
+    + bool isValidRange(const std::string &range) const
+    + std::pair<int, int> getCellReference(const std::string &token) const
+    + FunctionType getFunctionType(std::string &token) const
+    + bool isValue(const std::string &token) const
+    + double evaluateSingleToken(std::string &singleToken, spc::myset<std::pair<int, int>> &uniqueDependents) const
+    + double SUM(std::pair<int, int> startPos, std::pair<int, int> endPos, spc::myset<std::pair<int, int>> &uniqueDependents) const
+    + double AVER(std::pair<int, int> startPos, std::pair<int, int> endPos, spc::myset<std::pair<int, int>> &uniqueDependents) const
+    + double STDDEV(std::pair<int, int> startPos, std::pair<int, int> endPos, spc::myset<std::pair<int, int>> &uniqueDependents) const
+    + double MAX(std::pair<int, int> startPos, std::pair<int, int> endPos, spc::myset<std::pair<int, int>> &uniqueDependents) const
+    + double MIN(std::pair<int, int> startPos, std::pair<int, int> endPos, spc::myset<std::pair<int, int>> &uniqueDependents) const
+}
+
+class FileHandler {
+    + FileHandler()
+    + void saveToFile(const std::string &filename, const Spreadsheet &spreadsheet)
+    + void loadFromFile(const std::string &filename, Spreadsheet &spreadsheet)
+}
+
+namespace spc {
+    class myvec<T> {
+        - T *data
+        - int size
+        - int capacity
+        + myvec(int cap = 10)
+        + ~myvec()
+        + void push_back(const T &val)
+        + void push_back(T &&val)
+        + T &operator[](int index)
+        + const T &operator[](int index) const
+        + int get_size()
+        + int get_capacity()
+        + bool empty()
+        + void clear()
+    }
+
+    class myset<T> {
+        - spc::myvec<T> elements
+        + myset()
+        + void insert(const T &value)
+        + bool find(const T &value) const
+        + size_t size() const
+        + bool empty() const
+        + void clear()
+    }
+}
+
+Cell <|-- ValueCell
+Cell <|-- FormulaCell
+ValueCell <|-- IntValueCell
+ValueCell <|-- StringValueCell
+ValueCell <|-- DoubleValueCell
+
+Spreadsheet *-- Cell
+Spreadsheet *-- FormulaParser
+Spreadsheet *-- FileHandler
+
+@enduml

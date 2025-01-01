@@ -1,0 +1,231 @@
+\doxysection{Spreadsheet Class Reference}
+\hypertarget{classSpreadsheet}{}\label{classSpreadsheet}\index{Spreadsheet@{Spreadsheet}}
+
+
+A class representing a spreadsheet consisting of cells arranged in rows and columns.  
+
+
+
+
+{\ttfamily \#include $<$Spreadsheet.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSpreadsheet_aaaf6168369654822de9034ff4acc9446}{Spreadsheet}} (int rows, int cols)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classSpreadsheet}{Spreadsheet} object with a specified number of rows and columns. \end{DoxyCompactList}\item 
+\Hypertarget{classSpreadsheet_ad5ec7730e928c538c2ea68630a7a483c}\label{classSpreadsheet_ad5ec7730e928c538c2ea68630a7a483c} 
+{\bfseries Spreadsheet} ()
+\begin{DoxyCompactList}\small\item\em Default constructor that creates a 3x3 spreadsheet. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classCell}{Cell}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classSpreadsheet_a710a159db1a053273f8b5a58743ef056}{get\+Cell}} (int r, int c) const
+\begin{DoxyCompactList}\small\item\em Retrieves a pointer to the cell at the specified row and column. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSpreadsheet_aa6fce07a07cb37beb7eaf5816a2aa3e7}{set\+Cell}} (int r, int c, std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classCell}{Cell}} $>$ cell)
+\begin{DoxyCompactList}\small\item\em Sets the cell at the specified row and column with a given cell object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSpreadsheet_a2d67caccd8eafc0c7aa60d7844ab9caa}{enter\+Data}} (int r, int c, std\+::string \&input)
+\begin{DoxyCompactList}\small\item\em Enters data into a specified cell in the spreadsheet by taking a reference to the input string. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSpreadsheet_af35ec8651dd12ed0d6e53c869bcb2f5d}{enter\+Data}} (int r, int c, std\+::string \&\&input)
+\begin{DoxyCompactList}\small\item\em Enters data into a specified cell in the spreadsheet by taking an r-\/value reference to the input string. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classSpreadsheet_a11e393fcdcbeeef4debc420e955d26b7}{get\+Row\+Count}} () const
+\begin{DoxyCompactList}\small\item\em Returns the total number of rows in the spreadsheet. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classSpreadsheet_ab18aa2c32c338cfe871fbfd212d143af}{get\+Col\+Count}} () const
+\begin{DoxyCompactList}\small\item\em Returns the total number of columns in the spreadsheet. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classspc_1_1myvec}{spc\+::myvec}}$<$ \mbox{\hyperlink{classCell}{Cell}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classSpreadsheet_a051d8ab48470e4b6127bef3fbc35bdc8}{get\+Cells\+In\+Range}} (std\+::pair$<$ int, int $>$ start\+Pos, std\+::pair$<$ int, int $>$ end\+Pos)
+\begin{DoxyCompactList}\small\item\em Retrieves a list of cells within a specified range. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSpreadsheet_a8f236bd87a03828e3a7cea8ea56ad929}{display\+Screen}} (int current\+Row, int current\+Col, \mbox{\hyperlink{classAnsiTerminal}{Ansi\+Terminal}} \&terminal, std\+::string input\+Line="{}"{})
+\begin{DoxyCompactList}\small\item\em Displays the contents of the spreadsheet on the terminal. \end{DoxyCompactList}\item 
+\Hypertarget{classSpreadsheet_ac113f795c4621a779aaf315175f8ece5}\label{classSpreadsheet_ac113f795c4621a779aaf315175f8ece5} 
+void {\bfseries run} ()
+\begin{DoxyCompactList}\small\item\em Runs the spreadsheet, initiating the user interface and interactive features. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classSpreadsheet_ad27b4ceadbc59c52c659df39e0b5f704}\label{classSpreadsheet_ad27b4ceadbc59c52c659df39e0b5f704} 
+static const int {\bfseries MAX\+\_\+\+ROWS} = 100
+\begin{DoxyCompactList}\small\item\em Maximum number of rows in the spreadsheet. \end{DoxyCompactList}\item 
+\Hypertarget{classSpreadsheet_ace3c1294f776037a09eca5c823e16b9f}\label{classSpreadsheet_ace3c1294f776037a09eca5c823e16b9f} 
+static const int {\bfseries MAX\+\_\+\+COLS} = 50
+\begin{DoxyCompactList}\small\item\em Maximum number of columns in the spreadsheet. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classSpreadsheet_ad948b5763603915e0f4e528b6e15f7ff}\label{classSpreadsheet_ad948b5763603915e0f4e528b6e15f7ff} 
+class \mbox{\hyperlink{classSpreadsheet_ad948b5763603915e0f4e528b6e15f7ff}{File\+Handler}}
+\begin{DoxyCompactList}\small\item\em Friend class \doxylink{classFileHandler}{File\+Handler}, allowing it to access private members of \doxylink{classSpreadsheet}{Spreadsheet}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class representing a spreadsheet consisting of cells arranged in rows and columns. 
+
+The \doxylink{classSpreadsheet}{Spreadsheet} class allows you to manage a grid of cells, input data into individual cells, display the content of cells, and perform operations like navigating and expanding the grid. It supports formulas and provides an interface for interacting with the content of the spreadsheet. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classSpreadsheet_aaaf6168369654822de9034ff4acc9446}\label{classSpreadsheet_aaaf6168369654822de9034ff4acc9446} 
+\index{Spreadsheet@{Spreadsheet}!Spreadsheet@{Spreadsheet}}
+\index{Spreadsheet@{Spreadsheet}!Spreadsheet@{Spreadsheet}}
+\doxysubsubsection{\texorpdfstring{Spreadsheet()}{Spreadsheet()}}
+{\footnotesize\ttfamily Spreadsheet\+::\+Spreadsheet (\begin{DoxyParamCaption}\item[{int}]{rows,  }\item[{int}]{cols }\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{classSpreadsheet}{Spreadsheet} object with a specified number of rows and columns. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rows} & The number of rows in the spreadsheet. \\
+\hline
+{\em cols} & The number of columns in the spreadsheet. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classSpreadsheet_a8f236bd87a03828e3a7cea8ea56ad929}\label{classSpreadsheet_a8f236bd87a03828e3a7cea8ea56ad929} 
+\index{Spreadsheet@{Spreadsheet}!displayScreen@{displayScreen}}
+\index{displayScreen@{displayScreen}!Spreadsheet@{Spreadsheet}}
+\doxysubsubsection{\texorpdfstring{displayScreen()}{displayScreen()}}
+{\footnotesize\ttfamily void Spreadsheet\+::display\+Screen (\begin{DoxyParamCaption}\item[{int}]{current\+Row,  }\item[{int}]{current\+Col,  }\item[{\mbox{\hyperlink{classAnsiTerminal}{Ansi\+Terminal}} \&}]{terminal,  }\item[{std\+::string}]{input\+Line = {\ttfamily "{}"{}} }\end{DoxyParamCaption})}
+
+
+
+Displays the contents of the spreadsheet on the terminal. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em current\+Row} & The current row index to highlight. \\
+\hline
+{\em current\+Col} & The current column index to highlight. \\
+\hline
+{\em terminal} & A reference to the \doxylink{classAnsiTerminal}{Ansi\+Terminal} object used for display. \\
+\hline
+{\em input\+Line} & The input line to be displayed, if any. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classSpreadsheet_af35ec8651dd12ed0d6e53c869bcb2f5d}\label{classSpreadsheet_af35ec8651dd12ed0d6e53c869bcb2f5d} 
+\index{Spreadsheet@{Spreadsheet}!enterData@{enterData}}
+\index{enterData@{enterData}!Spreadsheet@{Spreadsheet}}
+\doxysubsubsection{\texorpdfstring{enterData()}{enterData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Spreadsheet\+::enter\+Data (\begin{DoxyParamCaption}\item[{int}]{r,  }\item[{int}]{c,  }\item[{std\+::string \&\&}]{input }\end{DoxyParamCaption})}
+
+
+
+Enters data into a specified cell in the spreadsheet by taking an r-\/value reference to the input string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & The row index of the cell. \\
+\hline
+{\em c} & The column index of the cell. \\
+\hline
+{\em input} & The input string containing the data to be entered into the cell. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classSpreadsheet_a2d67caccd8eafc0c7aa60d7844ab9caa}\label{classSpreadsheet_a2d67caccd8eafc0c7aa60d7844ab9caa} 
+\index{Spreadsheet@{Spreadsheet}!enterData@{enterData}}
+\index{enterData@{enterData}!Spreadsheet@{Spreadsheet}}
+\doxysubsubsection{\texorpdfstring{enterData()}{enterData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Spreadsheet\+::enter\+Data (\begin{DoxyParamCaption}\item[{int}]{r,  }\item[{int}]{c,  }\item[{std\+::string \&}]{input }\end{DoxyParamCaption})}
+
+
+
+Enters data into a specified cell in the spreadsheet by taking a reference to the input string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & The row index of the cell. \\
+\hline
+{\em c} & The column index of the cell. \\
+\hline
+{\em input} & The input string containing the data to be entered into the cell. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classSpreadsheet_a710a159db1a053273f8b5a58743ef056}\label{classSpreadsheet_a710a159db1a053273f8b5a58743ef056} 
+\index{Spreadsheet@{Spreadsheet}!getCell@{getCell}}
+\index{getCell@{getCell}!Spreadsheet@{Spreadsheet}}
+\doxysubsubsection{\texorpdfstring{getCell()}{getCell()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classCell}{Cell}} \texorpdfstring{$\ast$}{*} Spreadsheet\+::get\+Cell (\begin{DoxyParamCaption}\item[{int}]{r,  }\item[{int}]{c }\end{DoxyParamCaption}) const}
+
+
+
+Retrieves a pointer to the cell at the specified row and column. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & The row index of the cell. \\
+\hline
+{\em c} & The column index of the cell.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the \doxylink{classCell}{Cell} object at the specified position. 
+\end{DoxyReturn}
+\Hypertarget{classSpreadsheet_a051d8ab48470e4b6127bef3fbc35bdc8}\label{classSpreadsheet_a051d8ab48470e4b6127bef3fbc35bdc8} 
+\index{Spreadsheet@{Spreadsheet}!getCellsInRange@{getCellsInRange}}
+\index{getCellsInRange@{getCellsInRange}!Spreadsheet@{Spreadsheet}}
+\doxysubsubsection{\texorpdfstring{getCellsInRange()}{getCellsInRange()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classspc_1_1myvec}{spc\+::myvec}}$<$ \mbox{\hyperlink{classCell}{Cell}} \texorpdfstring{$\ast$}{*} $>$ Spreadsheet\+::get\+Cells\+In\+Range (\begin{DoxyParamCaption}\item[{std\+::pair$<$ int, int $>$}]{start\+Pos,  }\item[{std\+::pair$<$ int, int $>$}]{end\+Pos }\end{DoxyParamCaption})}
+
+
+
+Retrieves a list of cells within a specified range. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+Pos} & A pair representing the starting row and column. \\
+\hline
+{\em end\+Pos} & A pair representing the ending row and column.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of pointers to the cells within the specified range. 
+\end{DoxyReturn}
+\Hypertarget{classSpreadsheet_ab18aa2c32c338cfe871fbfd212d143af}\label{classSpreadsheet_ab18aa2c32c338cfe871fbfd212d143af} 
+\index{Spreadsheet@{Spreadsheet}!getColCount@{getColCount}}
+\index{getColCount@{getColCount}!Spreadsheet@{Spreadsheet}}
+\doxysubsubsection{\texorpdfstring{getColCount()}{getColCount()}}
+{\footnotesize\ttfamily int Spreadsheet\+::get\+Col\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the total number of columns in the spreadsheet. 
+
+\begin{DoxyReturn}{Returns}
+The number of columns in the spreadsheet. 
+\end{DoxyReturn}
+\Hypertarget{classSpreadsheet_a11e393fcdcbeeef4debc420e955d26b7}\label{classSpreadsheet_a11e393fcdcbeeef4debc420e955d26b7} 
+\index{Spreadsheet@{Spreadsheet}!getRowCount@{getRowCount}}
+\index{getRowCount@{getRowCount}!Spreadsheet@{Spreadsheet}}
+\doxysubsubsection{\texorpdfstring{getRowCount()}{getRowCount()}}
+{\footnotesize\ttfamily int Spreadsheet\+::get\+Row\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the total number of rows in the spreadsheet. 
+
+\begin{DoxyReturn}{Returns}
+The number of rows in the spreadsheet. 
+\end{DoxyReturn}
+\Hypertarget{classSpreadsheet_aa6fce07a07cb37beb7eaf5816a2aa3e7}\label{classSpreadsheet_aa6fce07a07cb37beb7eaf5816a2aa3e7} 
+\index{Spreadsheet@{Spreadsheet}!setCell@{setCell}}
+\index{setCell@{setCell}!Spreadsheet@{Spreadsheet}}
+\doxysubsubsection{\texorpdfstring{setCell()}{setCell()}}
+{\footnotesize\ttfamily void Spreadsheet\+::set\+Cell (\begin{DoxyParamCaption}\item[{int}]{r,  }\item[{int}]{c,  }\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classCell}{Cell}} $>$}]{cell }\end{DoxyParamCaption})}
+
+
+
+Sets the cell at the specified row and column with a given cell object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & The row index of the cell. \\
+\hline
+{\em c} & The column index of the cell. \\
+\hline
+{\em cell} & A unique pointer to the \doxylink{classCell}{Cell} object to set at the specified position. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Spreadsheet.\+h\item 
+Spreadsheet.\+cpp\end{DoxyCompactItemize}

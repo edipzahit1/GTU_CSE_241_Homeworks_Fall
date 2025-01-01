@@ -1,0 +1,13 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" href="$classCell.html" title=" " alt="" coords="5,31,52,56"/>
+<area shape="rect" id="Node000001" href="$classFormulaCell.html" title=" " alt="" coords="100,5,200,31"/>
+<area shape="poly" id="edge1_Node000000_Node000001" title=" " alt="" coords="65,33,99,26,100,31,66,38"/>
+<area shape="rect" id="Node000002" href="$classValueCell.html" title=" " alt="" coords="109,55,191,80"/>
+<area shape="poly" id="edge2_Node000000_Node000002" title=" " alt="" coords="66,48,109,57,108,62,65,53"/>
+<area shape="rect" id="Node000003" href="$classDoubleValueCell.html" title=" " alt="" coords="248,5,377,31"/>
+<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="204,48,269,28,271,33,205,53"/>
+<area shape="rect" id="Node000004" href="$classIntValueCell.html" title=" " alt="" coords="263,55,363,80"/>
+<area shape="poly" id="edge4_Node000002_Node000004" title=" " alt="" coords="205,65,262,65,262,70,205,70"/>
+<area shape="rect" id="Node000005" href="$classStringValueCell.html" title=" " alt="" coords="252,104,373,129"/>
+<area shape="poly" id="edge5_Node000002_Node000005" title=" " alt="" coords="205,81,271,101,269,106,204,86"/>
+</map>

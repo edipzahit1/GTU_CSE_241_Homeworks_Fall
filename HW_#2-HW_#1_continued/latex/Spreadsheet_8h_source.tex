@@ -1,0 +1,65 @@
+\doxysection{Spreadsheet.\+h}
+\hypertarget{Spreadsheet_8h_source}{}\label{Spreadsheet_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ SPREADSHEET\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ SPREADSHEET\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}Cell.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}AnsiTerminal.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}myvec.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}FormulaParser.h"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classSpreadsheet}{Spreadsheet}}}
+\DoxyCodeLine{00025\ \{}
+\DoxyCodeLine{00026\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classSpreadsheet_ad27b4ceadbc59c52c659df39e0b5f704}{MAX\_ROWS}}\ =\ 100;\ }
+\DoxyCodeLine{00029\ \ \ \ \ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classSpreadsheet_ace3c1294f776037a09eca5c823e16b9f}{MAX\_COLS}}\ =\ 50;}
+\DoxyCodeLine{00032\ \ \ \ \ }
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{classSpreadsheet_ad5ec7730e928c538c2ea68630a7a483c}{Spreadsheet}}(\textcolor{keywordtype}{int}\ rows,\ \textcolor{keywordtype}{int}\ cols);}
+\DoxyCodeLine{00040\ \ \ \ \ }
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{classSpreadsheet_ad5ec7730e928c538c2ea68630a7a483c}{Spreadsheet}}()\ :\ \mbox{\hyperlink{classSpreadsheet}{Spreadsheet}}(3,\ 3)\ \{\}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{classCell}{Cell}}\ *\mbox{\hyperlink{classSpreadsheet_a710a159db1a053273f8b5a58743ef056}{getCell}}(\textcolor{keywordtype}{int}\ r,\ \textcolor{keywordtype}{int}\ c)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSpreadsheet_aa6fce07a07cb37beb7eaf5816a2aa3e7}{setCell}}(\textcolor{keywordtype}{int}\ r,\ \textcolor{keywordtype}{int}\ c,\ std::unique\_ptr<Cell>\ cell);}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSpreadsheet_a2d67caccd8eafc0c7aa60d7844ab9caa}{enterData}}(\textcolor{keywordtype}{int}\ r,\ \textcolor{keywordtype}{int}\ c,\ std::string\&\ input);}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSpreadsheet_a2d67caccd8eafc0c7aa60d7844ab9caa}{enterData}}(\textcolor{keywordtype}{int}\ r,\ \textcolor{keywordtype}{int}\ c,\ std::string\&\&\ input);}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classSpreadsheet_a11e393fcdcbeeef4debc420e955d26b7}{getRowCount}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ cells.\mbox{\hyperlink{classspc_1_1myvec_aefc8418cc96326028c0d9cc111994428}{get\_size}}();\ \}}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classSpreadsheet_ab18aa2c32c338cfe871fbfd212d143af}{getColCount}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ cells[0].\mbox{\hyperlink{classspc_1_1myvec_aefc8418cc96326028c0d9cc111994428}{get\_size}}();\ \}}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00105\ \ \ \ \ \mbox{\hyperlink{classspc_1_1myvec}{spc::myvec<Cell\ *>}}\ \mbox{\hyperlink{classSpreadsheet_a051d8ab48470e4b6127bef3fbc35bdc8}{getCellsInRange}}(std::pair<int,\ int>\ startPos,\ std::pair<int,\ int>\ endPos);}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSpreadsheet_a8f236bd87a03828e3a7cea8ea56ad929}{displayScreen}}(\textcolor{keywordtype}{int}\ currentRow,\ \textcolor{keywordtype}{int}\ currentCol,\ \mbox{\hyperlink{classAnsiTerminal}{AnsiTerminal}}\&\ terminal,\ std::string\ inputLine\ =\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSpreadsheet_ac113f795c4621a779aaf315175f8ece5}{run}}();}
+\DoxyCodeLine{00121\ \ \ \ \ }
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classFileHandler}{FileHandler}};}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00129\ \ \ \ \ \mbox{\hyperlink{classspc_1_1myvec}{spc::myvec<spc::myvec<std::unique\_ptr<Cell>}}>>\ cells;}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00132\ \ \ \ \ std::shared\_ptr<FormulaParser>\ parser;}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{keywordtype}{void}\ expand(\textcolor{keywordtype}{int}\ newRowCount,\ \textcolor{keywordtype}{int}\ newColCount);}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00149\ \ \ \ \ std::string\ getColumnLabel(\textcolor{keywordtype}{int}\ columnIndex)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00159\ \ \ \ \ std::string\ getCellLabel(\textcolor{keywordtype}{int}\ r,\ \textcolor{keywordtype}{int}\ c)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00169\ \ \ \ \ std::string\ formatCellText(\textcolor{keyword}{const}\ std::string\ \&cellText,\ \textcolor{keywordtype}{int}\ width);}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00178\ \ \ \ \ \textcolor{keywordtype}{void}\ moveCell(\textcolor{keywordtype}{int}\ \&currentRow,\ \textcolor{keywordtype}{int}\ \&currentCol,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ dir);}
+\DoxyCodeLine{00179\ \};}
+\DoxyCodeLine{00180\ }
+\DoxyCodeLine{00181\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

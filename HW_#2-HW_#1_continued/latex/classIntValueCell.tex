@@ -1,0 +1,127 @@
+\doxysection{Int\+Value\+Cell Class Reference}
+\hypertarget{classIntValueCell}{}\label{classIntValueCell}\index{IntValueCell@{IntValueCell}}
+
+
+{\ttfamily \#include $<$Cell.\+h$>$}
+
+
+
+Inheritance diagram for Int\+Value\+Cell\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=155pt]{classIntValueCell__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Int\+Value\+Cell\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=155pt]{classIntValueCell__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classIntValueCell_a69f0bf0e921b5943fdb4af7e2c254b83}{Int\+Value\+Cell}} (int r, int c, int value)
+\item 
+std\+::string \mbox{\hyperlink{classIntValueCell_a16800d9bffcf14af8aab43861ee0386e}{get\+Value\+As\+String}} () const override
+\item 
+int \mbox{\hyperlink{classIntValueCell_a51d2903db51f6e83e84fd3056aeb7ff4}{get\+Value}} () const
+\item 
+void \mbox{\hyperlink{classIntValueCell_aaeebf9651e38fd1cf0d8c02284e0b87e}{set\+Value}} (const std\+::string \&v)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classValueCell}{Value\+Cell}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classValueCell_a49874aeae17d11e4ad7651a6d0aaa1bd}{Value\+Cell}} (int r, int c)
+\item 
+virtual \mbox{\hyperlink{classValueCell_ab3fe94daf68872a520d5f85abc5d7463}{\texorpdfstring{$\sim$}{\string~}\+Value\+Cell}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classCell}{Cell}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCell_a5d864179105fe90ff5caed1e100ea15b}{Cell}} (int r, int c)
+\item 
+virtual \mbox{\hyperlink{classCell_a246d54ef2e569f97000fe94f5524e7ba}{\texorpdfstring{$\sim$}{\string~}\+Cell}} ()=default
+\item 
+void \mbox{\hyperlink{classCell_afdef300bb2c5d094486a3719b47f2083}{set\+Letter\+Representation}} (int r, int c)
+\item 
+std\+::string \mbox{\hyperlink{classCell_a43a4a18bf3e09058fe8103949b4d91af}{get\+Letter\+Representation}} () const
+\item 
+int \mbox{\hyperlink{classCell_ac539fe0f0330ca0e437180e1a5b59162}{get\+Row}} () const
+\item 
+int \mbox{\hyperlink{classCell_a25280a2e9a8df8a51092c94737f44d58}{get\+Col}} () const
+\item 
+double \mbox{\hyperlink{classCell_aa41edda20ea178d105fb3d57d379aea4}{get\+Cell\+Value\+As\+Double}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class representing a cell that stores an integer value. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classIntValueCell_a69f0bf0e921b5943fdb4af7e2c254b83}\label{classIntValueCell_a69f0bf0e921b5943fdb4af7e2c254b83} 
+\index{IntValueCell@{IntValueCell}!IntValueCell@{IntValueCell}}
+\index{IntValueCell@{IntValueCell}!IntValueCell@{IntValueCell}}
+\doxysubsubsection{\texorpdfstring{IntValueCell()}{IntValueCell()}}
+{\footnotesize\ttfamily Int\+Value\+Cell\+::\+Int\+Value\+Cell (\begin{DoxyParamCaption}\item[{int}]{r,  }\item[{int}]{c,  }\item[{int}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor for \doxylink{classIntValueCell}{Int\+Value\+Cell}. 
+\begin{DoxyParams}{Parameters}
+{\em r} & Row index. \\
+\hline
+{\em c} & Column index. \\
+\hline
+{\em value} & Initial integer value. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classIntValueCell_a51d2903db51f6e83e84fd3056aeb7ff4}\label{classIntValueCell_a51d2903db51f6e83e84fd3056aeb7ff4} 
+\index{IntValueCell@{IntValueCell}!getValue@{getValue}}
+\index{getValue@{getValue}!IntValueCell@{IntValueCell}}
+\doxysubsubsection{\texorpdfstring{getValue()}{getValue()}}
+{\footnotesize\ttfamily int Int\+Value\+Cell\+::get\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Retrieves the integer value of the cell. \begin{DoxyReturn}{Returns}
+Integer value. 
+\end{DoxyReturn}
+\Hypertarget{classIntValueCell_a16800d9bffcf14af8aab43861ee0386e}\label{classIntValueCell_a16800d9bffcf14af8aab43861ee0386e} 
+\index{IntValueCell@{IntValueCell}!getValueAsString@{getValueAsString}}
+\index{getValueAsString@{getValueAsString}!IntValueCell@{IntValueCell}}
+\doxysubsubsection{\texorpdfstring{getValueAsString()}{getValueAsString()}}
+{\footnotesize\ttfamily std\+::string Int\+Value\+Cell\+::get\+Value\+As\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Retrieves the cell\textquotesingle{}s value as a string. \begin{DoxyReturn}{Returns}
+Integer value as a string. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCell_a9b851e4caf142ca6fd72ada2e7505b6b}{Cell}}.
+
+\Hypertarget{classIntValueCell_aaeebf9651e38fd1cf0d8c02284e0b87e}\label{classIntValueCell_aaeebf9651e38fd1cf0d8c02284e0b87e} 
+\index{IntValueCell@{IntValueCell}!setValue@{setValue}}
+\index{setValue@{setValue}!IntValueCell@{IntValueCell}}
+\doxysubsubsection{\texorpdfstring{setValue()}{setValue()}}
+{\footnotesize\ttfamily void Int\+Value\+Cell\+::set\+Value (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Sets the integer value of the cell. 
+\begin{DoxyParams}{Parameters}
+{\em v} & New value as a string. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classValueCell_ad74a0881a4bbc93db158acbfe530a493}{Value\+Cell}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Cell.\+h\end{DoxyCompactItemize}

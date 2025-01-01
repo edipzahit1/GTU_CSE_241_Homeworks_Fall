@@ -1,0 +1,127 @@
+\doxysection{Ansi\+Terminal Class Reference}
+\hypertarget{classAnsiTerminal}{}\label{classAnsiTerminal}\index{AnsiTerminal@{AnsiTerminal}}
+
+
+Provides an interface for ANSI terminal manipulation, including text printing, screen clearing, and key detection.  
+
+
+
+
+{\ttfamily \#include $<$Ansi\+Terminal.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classAnsiTerminal_a1a4716930e2303ce0245e88b265c31d5}\label{classAnsiTerminal_a1a4716930e2303ce0245e88b265c31d5} 
+{\bfseries Ansi\+Terminal} ()
+\begin{DoxyCompactList}\small\item\em Constructor\+: Sets up the terminal for capturing keystrokes. \end{DoxyCompactList}\item 
+\Hypertarget{classAnsiTerminal_a43c6c47b99e534a5b2bdcae93ca40be1}\label{classAnsiTerminal_a43c6c47b99e534a5b2bdcae93ca40be1} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Ansi\+Terminal} ()
+\begin{DoxyCompactList}\small\item\em Destructor\+: Restores the terminal settings to the original state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAnsiTerminal_a63efd5bf2d22f72cf5806e438ee8d75b}{print\+At}} (int row, int col, const std\+::string \&text)
+\begin{DoxyCompactList}\small\item\em Print text at a specified row and column. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAnsiTerminal_a6232a1669280f986757d4311d0141660}{print\+Inverted\+At}} (int row, int col, const std\+::string \&text)
+\begin{DoxyCompactList}\small\item\em Print text with inverted background at a specified row and column. \end{DoxyCompactList}\item 
+\Hypertarget{classAnsiTerminal_a61280b1bae5fe63d73bda9f225374d50}\label{classAnsiTerminal_a61280b1bae5fe63d73bda9f225374d50} 
+void {\bfseries clear\+Screen} ()
+\begin{DoxyCompactList}\small\item\em Clear the terminal screen. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{classAnsiTerminal_a5f8ed706721f7f7a7798d80c9b63ce24}{get\+Keystroke}} ()
+\begin{DoxyCompactList}\small\item\em Get a single keystroke from the terminal. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{classAnsiTerminal_ac2570b563d3475012955373c9219502d}{get\+Special\+Key}} ()
+\begin{DoxyCompactList}\small\item\em Get the arrow key or special key input. Returns \textquotesingle{}U\textquotesingle{}, \textquotesingle{}D\textquotesingle{}, \textquotesingle{}L\textquotesingle{}, \textquotesingle{}R\textquotesingle{} for Up, Down, Left, Right, respectively, or detects other key combinations such as Alt+\+Key, Ctrl+\+Key, etc. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classAnsiTerminal_af2ab382dd5ac1d4e239aefc1fe2374e0}{is\+Arrow\+Key}} (const char ch)
+\begin{DoxyCompactList}\small\item\em Check if a character corresponds to an arrow key. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provides an interface for ANSI terminal manipulation, including text printing, screen clearing, and key detection. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classAnsiTerminal_a5f8ed706721f7f7a7798d80c9b63ce24}\label{classAnsiTerminal_a5f8ed706721f7f7a7798d80c9b63ce24} 
+\index{AnsiTerminal@{AnsiTerminal}!getKeystroke@{getKeystroke}}
+\index{getKeystroke@{getKeystroke}!AnsiTerminal@{AnsiTerminal}}
+\doxysubsubsection{\texorpdfstring{getKeystroke()}{getKeystroke()}}
+{\footnotesize\ttfamily char Ansi\+Terminal\+::get\+Keystroke (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get a single keystroke from the terminal. 
+
+\begin{DoxyReturn}{Returns}
+The character representing the keystroke. 
+\end{DoxyReturn}
+\Hypertarget{classAnsiTerminal_ac2570b563d3475012955373c9219502d}\label{classAnsiTerminal_ac2570b563d3475012955373c9219502d} 
+\index{AnsiTerminal@{AnsiTerminal}!getSpecialKey@{getSpecialKey}}
+\index{getSpecialKey@{getSpecialKey}!AnsiTerminal@{AnsiTerminal}}
+\doxysubsubsection{\texorpdfstring{getSpecialKey()}{getSpecialKey()}}
+{\footnotesize\ttfamily char Ansi\+Terminal\+::get\+Special\+Key (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the arrow key or special key input. Returns \textquotesingle{}U\textquotesingle{}, \textquotesingle{}D\textquotesingle{}, \textquotesingle{}L\textquotesingle{}, \textquotesingle{}R\textquotesingle{} for Up, Down, Left, Right, respectively, or detects other key combinations such as Alt+\+Key, Ctrl+\+Key, etc. 
+
+\begin{DoxyReturn}{Returns}
+A character representing the detected special key. 
+\end{DoxyReturn}
+\Hypertarget{classAnsiTerminal_af2ab382dd5ac1d4e239aefc1fe2374e0}\label{classAnsiTerminal_af2ab382dd5ac1d4e239aefc1fe2374e0} 
+\index{AnsiTerminal@{AnsiTerminal}!isArrowKey@{isArrowKey}}
+\index{isArrowKey@{isArrowKey}!AnsiTerminal@{AnsiTerminal}}
+\doxysubsubsection{\texorpdfstring{isArrowKey()}{isArrowKey()}}
+{\footnotesize\ttfamily bool Ansi\+Terminal\+::is\+Arrow\+Key (\begin{DoxyParamCaption}\item[{const char}]{ch }\end{DoxyParamCaption})}
+
+
+
+Check if a character corresponds to an arrow key. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ch} & The character to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the character represents an arrow key; false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classAnsiTerminal_a63efd5bf2d22f72cf5806e438ee8d75b}\label{classAnsiTerminal_a63efd5bf2d22f72cf5806e438ee8d75b} 
+\index{AnsiTerminal@{AnsiTerminal}!printAt@{printAt}}
+\index{printAt@{printAt}!AnsiTerminal@{AnsiTerminal}}
+\doxysubsubsection{\texorpdfstring{printAt()}{printAt()}}
+{\footnotesize\ttfamily void Ansi\+Terminal\+::print\+At (\begin{DoxyParamCaption}\item[{int}]{row,  }\item[{int}]{col,  }\item[{const std\+::string \&}]{text }\end{DoxyParamCaption})}
+
+
+
+Print text at a specified row and column. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em row} & The row position (0-\/based index). \\
+\hline
+{\em col} & The column position (0-\/based index). \\
+\hline
+{\em text} & The text to be printed. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classAnsiTerminal_a6232a1669280f986757d4311d0141660}\label{classAnsiTerminal_a6232a1669280f986757d4311d0141660} 
+\index{AnsiTerminal@{AnsiTerminal}!printInvertedAt@{printInvertedAt}}
+\index{printInvertedAt@{printInvertedAt}!AnsiTerminal@{AnsiTerminal}}
+\doxysubsubsection{\texorpdfstring{printInvertedAt()}{printInvertedAt()}}
+{\footnotesize\ttfamily void Ansi\+Terminal\+::print\+Inverted\+At (\begin{DoxyParamCaption}\item[{int}]{row,  }\item[{int}]{col,  }\item[{const std\+::string \&}]{text }\end{DoxyParamCaption})}
+
+
+
+Print text with inverted background at a specified row and column. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em row} & The row position (0-\/based index). \\
+\hline
+{\em col} & The column position (0-\/based index). \\
+\hline
+{\em text} & The text to be printed with inverted colors. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Ansi\+Terminal.\+h\item 
+Ansi\+Terminal.\+cpp\end{DoxyCompactItemize}

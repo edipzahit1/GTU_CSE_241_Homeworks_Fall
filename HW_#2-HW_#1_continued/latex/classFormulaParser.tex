@@ -1,0 +1,87 @@
+\doxysection{Formula\+Parser Class Reference}
+\hypertarget{classFormulaParser}{}\label{classFormulaParser}\index{FormulaParser@{FormulaParser}}
+
+
+Responsible for parsing and evaluating formulas in the spreadsheet.  
+
+
+
+
+{\ttfamily \#include $<$Formula\+Parser.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classFormulaParser_ad44fd12e82512c1fea04cfca8eac706b}{Formula\+Parser}} (\mbox{\hyperlink{classSpreadsheet}{Spreadsheet}} \texorpdfstring{$\ast$}{*}sheet)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classFormulaParser}{Formula\+Parser} with a reference to the \doxylink{classSpreadsheet}{Spreadsheet}. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classFormulaParser_a8e448edc5569a3a8f1a35bae7ab54483}{parse\+And\+Evaluate}} (std\+::string \&formula, std\+::pair$<$ int, int $>$ coordinates, \mbox{\hyperlink{classspc_1_1myvec}{spc\+::myvec}}$<$ std\+::pair$<$ int, int $>$ $>$ \&dependent\+Cells)
+\begin{DoxyCompactList}\small\item\em Parses and evaluates a formula, updating dependent cells as needed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFormulaParser_a0bba44fefe33efcfaffb7d7afb86c5d7}{auto\+Calculate}} (std\+::pair$<$ int, int $>$ coordinate)
+\begin{DoxyCompactList}\small\item\em Automatically recalculates cells dependent on a specified cell. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Responsible for parsing and evaluating formulas in the spreadsheet. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classFormulaParser_ad44fd12e82512c1fea04cfca8eac706b}\label{classFormulaParser_ad44fd12e82512c1fea04cfca8eac706b} 
+\index{FormulaParser@{FormulaParser}!FormulaParser@{FormulaParser}}
+\index{FormulaParser@{FormulaParser}!FormulaParser@{FormulaParser}}
+\doxysubsubsection{\texorpdfstring{FormulaParser()}{FormulaParser()}}
+{\footnotesize\ttfamily Formula\+Parser\+::\+Formula\+Parser (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classSpreadsheet}{Spreadsheet}} \texorpdfstring{$\ast$}{*}}]{sheet }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a \doxylink{classFormulaParser}{Formula\+Parser} with a reference to the \doxylink{classSpreadsheet}{Spreadsheet}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sheet} & Pointer to the \doxylink{classSpreadsheet}{Spreadsheet} object. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classFormulaParser_a0bba44fefe33efcfaffb7d7afb86c5d7}\label{classFormulaParser_a0bba44fefe33efcfaffb7d7afb86c5d7} 
+\index{FormulaParser@{FormulaParser}!autoCalculate@{autoCalculate}}
+\index{autoCalculate@{autoCalculate}!FormulaParser@{FormulaParser}}
+\doxysubsubsection{\texorpdfstring{autoCalculate()}{autoCalculate()}}
+{\footnotesize\ttfamily void Formula\+Parser\+::auto\+Calculate (\begin{DoxyParamCaption}\item[{std\+::pair$<$ int, int $>$}]{coordinate }\end{DoxyParamCaption})}
+
+
+
+Automatically recalculates cells dependent on a specified cell. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em coordinate} & The coordinates of the cell whose dependents need recalculating. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classFormulaParser_a8e448edc5569a3a8f1a35bae7ab54483}\label{classFormulaParser_a8e448edc5569a3a8f1a35bae7ab54483} 
+\index{FormulaParser@{FormulaParser}!parseAndEvaluate@{parseAndEvaluate}}
+\index{parseAndEvaluate@{parseAndEvaluate}!FormulaParser@{FormulaParser}}
+\doxysubsubsection{\texorpdfstring{parseAndEvaluate()}{parseAndEvaluate()}}
+{\footnotesize\ttfamily double Formula\+Parser\+::parse\+And\+Evaluate (\begin{DoxyParamCaption}\item[{std\+::string \&}]{formula,  }\item[{std\+::pair$<$ int, int $>$}]{coordinates,  }\item[{\mbox{\hyperlink{classspc_1_1myvec}{spc\+::myvec}}$<$ std\+::pair$<$ int, int $>$ $>$ \&}]{dependent\+Cells }\end{DoxyParamCaption})}
+
+
+
+Parses and evaluates a formula, updating dependent cells as needed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em formula} & The formula string to parse and evaluate. \\
+\hline
+{\em coordinates} & The coordinates of the cell containing the formula. \\
+\hline
+{\em dependent\+Cells} & A vector to store dependent cell coordinates. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The calculated result of the formula. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Formula\+Parser.\+h\item 
+Formula\+Parser.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,127 @@
+\doxysection{Double\+Value\+Cell Class Reference}
+\hypertarget{classDoubleValueCell}{}\label{classDoubleValueCell}\index{DoubleValueCell@{DoubleValueCell}}
+
+
+{\ttfamily \#include $<$Cell.\+h$>$}
+
+
+
+Inheritance diagram for Double\+Value\+Cell\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=177pt]{classDoubleValueCell__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Double\+Value\+Cell\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=177pt]{classDoubleValueCell__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDoubleValueCell_a821759871368ec5aec99dbdb12e3ed56}{Double\+Value\+Cell}} (int r, int c, double value)
+\item 
+std\+::string \mbox{\hyperlink{classDoubleValueCell_a07c5fa871fac86915a9f23a1fb7f3dad}{get\+Value\+As\+String}} () const override
+\item 
+double \mbox{\hyperlink{classDoubleValueCell_ae2a08f650087cb39e6cff65817ed7e8a}{get\+Value}} () const
+\item 
+void \mbox{\hyperlink{classDoubleValueCell_aa1428efc7f888197a94cc0d785886244}{set\+Value}} (const std\+::string \&v)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classValueCell}{Value\+Cell}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classValueCell_a49874aeae17d11e4ad7651a6d0aaa1bd}{Value\+Cell}} (int r, int c)
+\item 
+virtual \mbox{\hyperlink{classValueCell_ab3fe94daf68872a520d5f85abc5d7463}{\texorpdfstring{$\sim$}{\string~}\+Value\+Cell}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classCell}{Cell}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCell_a5d864179105fe90ff5caed1e100ea15b}{Cell}} (int r, int c)
+\item 
+virtual \mbox{\hyperlink{classCell_a246d54ef2e569f97000fe94f5524e7ba}{\texorpdfstring{$\sim$}{\string~}\+Cell}} ()=default
+\item 
+void \mbox{\hyperlink{classCell_afdef300bb2c5d094486a3719b47f2083}{set\+Letter\+Representation}} (int r, int c)
+\item 
+std\+::string \mbox{\hyperlink{classCell_a43a4a18bf3e09058fe8103949b4d91af}{get\+Letter\+Representation}} () const
+\item 
+int \mbox{\hyperlink{classCell_ac539fe0f0330ca0e437180e1a5b59162}{get\+Row}} () const
+\item 
+int \mbox{\hyperlink{classCell_a25280a2e9a8df8a51092c94737f44d58}{get\+Col}} () const
+\item 
+double \mbox{\hyperlink{classCell_aa41edda20ea178d105fb3d57d379aea4}{get\+Cell\+Value\+As\+Double}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class representing a cell that stores a double value. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classDoubleValueCell_a821759871368ec5aec99dbdb12e3ed56}\label{classDoubleValueCell_a821759871368ec5aec99dbdb12e3ed56} 
+\index{DoubleValueCell@{DoubleValueCell}!DoubleValueCell@{DoubleValueCell}}
+\index{DoubleValueCell@{DoubleValueCell}!DoubleValueCell@{DoubleValueCell}}
+\doxysubsubsection{\texorpdfstring{DoubleValueCell()}{DoubleValueCell()}}
+{\footnotesize\ttfamily Double\+Value\+Cell\+::\+Double\+Value\+Cell (\begin{DoxyParamCaption}\item[{int}]{r,  }\item[{int}]{c,  }\item[{double}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor for \doxylink{classDoubleValueCell}{Double\+Value\+Cell}. 
+\begin{DoxyParams}{Parameters}
+{\em r} & Row index. \\
+\hline
+{\em c} & Column index. \\
+\hline
+{\em value} & Initial double value. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classDoubleValueCell_ae2a08f650087cb39e6cff65817ed7e8a}\label{classDoubleValueCell_ae2a08f650087cb39e6cff65817ed7e8a} 
+\index{DoubleValueCell@{DoubleValueCell}!getValue@{getValue}}
+\index{getValue@{getValue}!DoubleValueCell@{DoubleValueCell}}
+\doxysubsubsection{\texorpdfstring{getValue()}{getValue()}}
+{\footnotesize\ttfamily double Double\+Value\+Cell\+::get\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Retrieves the double value of the cell. \begin{DoxyReturn}{Returns}
+Double value. 
+\end{DoxyReturn}
+\Hypertarget{classDoubleValueCell_a07c5fa871fac86915a9f23a1fb7f3dad}\label{classDoubleValueCell_a07c5fa871fac86915a9f23a1fb7f3dad} 
+\index{DoubleValueCell@{DoubleValueCell}!getValueAsString@{getValueAsString}}
+\index{getValueAsString@{getValueAsString}!DoubleValueCell@{DoubleValueCell}}
+\doxysubsubsection{\texorpdfstring{getValueAsString()}{getValueAsString()}}
+{\footnotesize\ttfamily std\+::string Double\+Value\+Cell\+::get\+Value\+As\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Retrieves the cell\textquotesingle{}s value as a string. \begin{DoxyReturn}{Returns}
+Double value as a string. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCell_a9b851e4caf142ca6fd72ada2e7505b6b}{Cell}}.
+
+\Hypertarget{classDoubleValueCell_aa1428efc7f888197a94cc0d785886244}\label{classDoubleValueCell_aa1428efc7f888197a94cc0d785886244} 
+\index{DoubleValueCell@{DoubleValueCell}!setValue@{setValue}}
+\index{setValue@{setValue}!DoubleValueCell@{DoubleValueCell}}
+\doxysubsubsection{\texorpdfstring{setValue()}{setValue()}}
+{\footnotesize\ttfamily void Double\+Value\+Cell\+::set\+Value (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Sets the double value of the cell. 
+\begin{DoxyParams}{Parameters}
+{\em v} & New value as a string. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classValueCell_ad74a0881a4bbc93db158acbfe530a493}{Value\+Cell}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Cell.\+h\end{DoxyCompactItemize}

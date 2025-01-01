@@ -14,7 +14,12 @@ int main() {
 
     // Create a FileHandler for saving/loading files
     FileHandler fileHandler;
+
+    fileHandler.loadFromFile("spreadsheet.csv", spreadsheet);
+    spreadsheet.run();
+
     FormulaParser parser(spreadsheet);
+
 
     // Populate some cells with example data and formulas
     spreadsheet.getCell(0, 0)->setContent(10); // Set A1 to 10
@@ -37,11 +42,11 @@ int main() {
 
     fileHandler.saveToFile("spreadsheet.csv", spreadsheet);
 
-    Spreadsheet anotherSheet(10, 10);
+    //Spreadsheet anotherSheet(10, 10);
     
-    fileHandler.loadFromFile("spreadsheet.csv", anotherSheet); 
+    //fileHandler.loadFromFile("spreadsheet.csv", anotherSheet); 
 
-    anotherSheet.displayScreen(1,1);
+    //anotherSheet.displayScreen(1,1);
 
     return 0;
 }

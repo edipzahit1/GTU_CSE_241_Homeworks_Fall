@@ -1,0 +1,102 @@
+\doxysection{Value\+Cell Class Reference}
+\hypertarget{classValueCell}{}\label{classValueCell}\index{ValueCell@{ValueCell}}
+
+
+{\ttfamily \#include $<$Cell.\+h$>$}
+
+
+
+Inheritance diagram for Value\+Cell\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classValueCell__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Value\+Cell\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=142pt]{classValueCell__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classValueCell_a49874aeae17d11e4ad7651a6d0aaa1bd}{Value\+Cell}} (int r, int c)
+\item 
+virtual \mbox{\hyperlink{classValueCell_ab3fe94daf68872a520d5f85abc5d7463}{\texorpdfstring{$\sim$}{\string~}\+Value\+Cell}} ()=default
+\item 
+virtual void \mbox{\hyperlink{classValueCell_ad74a0881a4bbc93db158acbfe530a493}{set\+Value}} (const std\+::string \&v)=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classCell}{Cell}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCell_a5d864179105fe90ff5caed1e100ea15b}{Cell}} (int r, int c)
+\item 
+virtual \mbox{\hyperlink{classCell_a246d54ef2e569f97000fe94f5524e7ba}{\texorpdfstring{$\sim$}{\string~}\+Cell}} ()=default
+\item 
+void \mbox{\hyperlink{classCell_afdef300bb2c5d094486a3719b47f2083}{set\+Letter\+Representation}} (int r, int c)
+\item 
+std\+::string \mbox{\hyperlink{classCell_a43a4a18bf3e09058fe8103949b4d91af}{get\+Letter\+Representation}} () const
+\item 
+int \mbox{\hyperlink{classCell_ac539fe0f0330ca0e437180e1a5b59162}{get\+Row}} () const
+\item 
+int \mbox{\hyperlink{classCell_a25280a2e9a8df8a51092c94737f44d58}{get\+Col}} () const
+\item 
+double \mbox{\hyperlink{classCell_aa41edda20ea178d105fb3d57d379aea4}{get\+Cell\+Value\+As\+Double}} ()
+\item 
+virtual std\+::string \mbox{\hyperlink{classCell_a9b851e4caf142ca6fd72ada2e7505b6b}{get\+Value\+As\+String}} () const =0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract base class for value-\/based cells. Provides common functionality for cells storing direct values. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classValueCell_a49874aeae17d11e4ad7651a6d0aaa1bd}\label{classValueCell_a49874aeae17d11e4ad7651a6d0aaa1bd} 
+\index{ValueCell@{ValueCell}!ValueCell@{ValueCell}}
+\index{ValueCell@{ValueCell}!ValueCell@{ValueCell}}
+\doxysubsubsection{\texorpdfstring{ValueCell()}{ValueCell()}}
+{\footnotesize\ttfamily Value\+Cell\+::\+Value\+Cell (\begin{DoxyParamCaption}\item[{int}]{r,  }\item[{int}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor for \doxylink{classValueCell}{Value\+Cell}. 
+\begin{DoxyParams}{Parameters}
+{\em r} & Row index. \\
+\hline
+{\em c} & Column index. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classValueCell_ab3fe94daf68872a520d5f85abc5d7463}\label{classValueCell_ab3fe94daf68872a520d5f85abc5d7463} 
+\index{ValueCell@{ValueCell}!````~ValueCell@{\texorpdfstring{$\sim$}{\string~}ValueCell}}
+\index{````~ValueCell@{\texorpdfstring{$\sim$}{\string~}ValueCell}!ValueCell@{ValueCell}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}ValueCell()}{\string~ValueCell()}}
+{\footnotesize\ttfamily virtual Value\+Cell\+::\texorpdfstring{$\sim$}{\string~}\+Value\+Cell (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+Virtual destructor for polymorphic behavior. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classValueCell_ad74a0881a4bbc93db158acbfe530a493}\label{classValueCell_ad74a0881a4bbc93db158acbfe530a493} 
+\index{ValueCell@{ValueCell}!setValue@{setValue}}
+\index{setValue@{setValue}!ValueCell@{ValueCell}}
+\doxysubsubsection{\texorpdfstring{setValue()}{setValue()}}
+{\footnotesize\ttfamily virtual void Value\+Cell\+::set\+Value (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Pure virtual method to set the cell\textquotesingle{}s value. 
+\begin{DoxyParams}{Parameters}
+{\em v} & New value as a string. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classIntValueCell_aaeebf9651e38fd1cf0d8c02284e0b87e}{Int\+Value\+Cell}}, \mbox{\hyperlink{classStringValueCell_a9ec439942a0b6ac7c030ed47696336ab}{String\+Value\+Cell}}, and \mbox{\hyperlink{classDoubleValueCell_aa1428efc7f888197a94cc0d785886244}{Double\+Value\+Cell}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Cell.\+h\end{DoxyCompactItemize}

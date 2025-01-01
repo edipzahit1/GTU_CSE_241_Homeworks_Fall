@@ -1,0 +1,27 @@
+\doxysection{File\+Handler.\+h}
+\hypertarget{FileHandler_8h_source}{}\label{FileHandler_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ HANDLE\_EM}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ HANDLE\_EM}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}Spreadsheet.h"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classSpreadsheet}{Spreadsheet}};}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classFileHandler}{FileHandler}}\ }
+\DoxyCodeLine{00014\ \{}
+\DoxyCodeLine{00015\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classFileHandler_a37e963ea11309471d504a0cba29b412c}{saveToFile}}(\textcolor{keyword}{const}\ std::string\ \&filename,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classSpreadsheet}{Spreadsheet}}\ \&spreadsheet);}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classFileHandler_a07e761027db0cc6b0c1e0c1ee83e7ebf}{loadFromFile}}(\textcolor{keyword}{const}\ std::string\ \&filename,\ \mbox{\hyperlink{classSpreadsheet}{Spreadsheet}}\ \&spreadsheet);}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{bool}\ isInteger(\textcolor{keyword}{const}\ std::string\&\ str);}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{bool}\ isDouble(\textcolor{keyword}{const}\ std::string\&\ str);}
+\DoxyCodeLine{00044\ \};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

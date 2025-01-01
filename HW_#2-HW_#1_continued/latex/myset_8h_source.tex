@@ -1,0 +1,57 @@
+\doxysection{myset.\+h}
+\hypertarget{myset_8h_source}{}\label{myset_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ SPC\_MYSET\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ SPC\_MYSET\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}myvec.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{namespace\ }spc\ \{}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classspc_1_1myset}{myset}}\ \{}
+\DoxyCodeLine{00017\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{classspc_1_1myvec}{spc::myvec<T>}}\ elements;\ }
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{classspc_1_1myset_af5e670ea19b9d56b374a2cbf9612f2bc}{myset}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classspc_1_1myset_abf75be53bc0f6b161838e50212d5a4ef}{insert}}(\textcolor{keyword}{const}\ T\&\ value)\ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (std::find(elements.\mbox{\hyperlink{classspc_1_1myvec_ae26834c91a956681a4fe923df6dab2f2}{begin}}(),\ elements.\mbox{\hyperlink{classspc_1_1myvec_a8c51105938c357abe24c49d7fedeeaf3}{end}}(),\ value)\ ==\ elements.\mbox{\hyperlink{classspc_1_1myvec_a8c51105938c357abe24c49d7fedeeaf3}{end}}())\ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ elements.\mbox{\hyperlink{classspc_1_1myvec_a0b68ed44a36574fa2debb4cff8b38180}{push\_back}}(value);}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00034\ \ \ \ \ \}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classspc_1_1myset_ae7aa8126a2c68b49f876f2dc8204147e}{find}}(\textcolor{keyword}{const}\ T\&\ value)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::find(elements.\mbox{\hyperlink{classspc_1_1myvec_ae26834c91a956681a4fe923df6dab2f2}{begin}}(),\ elements.\mbox{\hyperlink{classspc_1_1myvec_a8c51105938c357abe24c49d7fedeeaf3}{end}}(),\ value)\ !=\ elements.\mbox{\hyperlink{classspc_1_1myvec_a8c51105938c357abe24c49d7fedeeaf3}{end}}();}
+\DoxyCodeLine{00043\ \ \ \ \ \}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classspc_1_1myset_a8972d39edf5b6b16afbceed45b351256}{size}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ elements.size();}
+\DoxyCodeLine{00051\ \ \ \ \ \}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classspc_1_1myset_a72a7e1da1cd34eeb5d3ef4e8c0e64771}{empty}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ elements.\mbox{\hyperlink{classspc_1_1myvec_a4e8b629bf010ff0c9b38725521b802d2}{empty}}();}
+\DoxyCodeLine{00059\ \ \ \ \ \}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classspc_1_1myset_a3775e0f36d7daca602ade6c713ec1149}{clear}}()\ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ elements.\mbox{\hyperlink{classspc_1_1myvec_a343ef5c16e8e87eca6ccd9c398d627e8}{clear}}();}
+\DoxyCodeLine{00066\ \ \ \ \ \}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00072\ \ \ \ \ T*\ \mbox{\hyperlink{classspc_1_1myset_a847752f24568a66e7870500e23dc1117}{begin}}()\ \{\ \textcolor{keywordflow}{return}\ elements.\mbox{\hyperlink{classspc_1_1myvec_ae26834c91a956681a4fe923df6dab2f2}{begin}}();\ \}\ \ }
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00078\ \ \ \ \ T*\ \mbox{\hyperlink{classspc_1_1myset_a5ccdb33ac5429f0a2d059be23312943f}{end}}()\ \{\ \textcolor{keywordflow}{return}\ elements.\mbox{\hyperlink{classspc_1_1myvec_a8c51105938c357abe24c49d7fedeeaf3}{end}}();\ \}}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keyword}{const}\ T*\ \mbox{\hyperlink{classspc_1_1myset_a9d573e6c303dbb82c9e95be9070cda51}{begin}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ elements.\mbox{\hyperlink{classspc_1_1myvec_ae26834c91a956681a4fe923df6dab2f2}{begin}}();\ \}\ \ }
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keyword}{const}\ T*\ \mbox{\hyperlink{classspc_1_1myset_a3589f8279a46de1363439698088c042b}{end}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ elements.\mbox{\hyperlink{classspc_1_1myvec_a8c51105938c357abe24c49d7fedeeaf3}{end}}();\ \}\ }
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \};}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \}\ \textcolor{comment}{//\ namespace\ spc}}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SPC\_MYSET\_H}}
+
+\end{DoxyCode}

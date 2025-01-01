@@ -1,0 +1,20 @@
+var searchData=
+[
+  ['get_5fcapacity_0',['get_capacity',['../classspc_1_1myvec.html#aa3d2dbb75570de6244577586559c282c',1,'spc::myvec']]],
+  ['get_5fsize_1',['get_size',['../classspc_1_1myvec.html#aefc8418cc96326028c0d9cc111994428',1,'spc::myvec']]],
+  ['getcalculatedvalue_2',['getCalculatedValue',['../classFormulaCell.html#a41e34ad126b43c1371a32c6ca68e8bab',1,'FormulaCell']]],
+  ['getcell_3',['getCell',['../classSpreadsheet.html#a710a159db1a053273f8b5a58743ef056',1,'Spreadsheet']]],
+  ['getcellsinrange_4',['getCellsInRange',['../classSpreadsheet.html#a051d8ab48470e4b6127bef3fbc35bdc8',1,'Spreadsheet']]],
+  ['getcellvalueasdouble_5',['getCellValueAsDouble',['../classCell.html#aa41edda20ea178d105fb3d57d379aea4',1,'Cell']]],
+  ['getcol_6',['getCol',['../classCell.html#a25280a2e9a8df8a51092c94737f44d58',1,'Cell']]],
+  ['getcolcount_7',['getColCount',['../classSpreadsheet.html#ab18aa2c32c338cfe871fbfd212d143af',1,'Spreadsheet']]],
+  ['getformula_8',['getFormula',['../classFormulaCell.html#a835ae4eb7792035555c9da5af63aac24',1,'FormulaCell']]],
+  ['getkeystroke_9',['getKeystroke',['../classAnsiTerminal.html#a5f8ed706721f7f7a7798d80c9b63ce24',1,'AnsiTerminal']]],
+  ['getletterrepresentation_10',['getLetterRepresentation',['../classCell.html#a43a4a18bf3e09058fe8103949b4d91af',1,'Cell']]],
+  ['getrow_11',['getRow',['../classCell.html#ac539fe0f0330ca0e437180e1a5b59162',1,'Cell']]],
+  ['getrowcount_12',['getRowCount',['../classSpreadsheet.html#a11e393fcdcbeeef4debc420e955d26b7',1,'Spreadsheet']]],
+  ['getsheet_13',['getSheet',['../classSheetHandler.html#a908843dda7681931e54fae381ff1cb5a',1,'SheetHandler']]],
+  ['getspecialkey_14',['getSpecialKey',['../classAnsiTerminal.html#ac2570b563d3475012955373c9219502d',1,'AnsiTerminal']]],
+  ['getvalue_15',['getvalue',['../classIntValueCell.html#a51d2903db51f6e83e84fd3056aeb7ff4',1,'IntValueCell::getValue()'],['../classStringValueCell.html#a6d962788d7d403e23bd730585bdfefb0',1,'StringValueCell::getValue()'],['../classDoubleValueCell.html#ae2a08f650087cb39e6cff65817ed7e8a',1,'DoubleValueCell::getValue()']]],
+  ['getvalueasstring_16',['getvalueasstring',['../classCell.html#a9b851e4caf142ca6fd72ada2e7505b6b',1,'Cell::getValueAsString()'],['../classFormulaCell.html#af37e8bbf3616fe567c475b56013c7087',1,'FormulaCell::getValueAsString()'],['../classIntValueCell.html#a16800d9bffcf14af8aab43861ee0386e',1,'IntValueCell::getValueAsString()'],['../classStringValueCell.html#aa1c9a8d6f0b56b8e60718f084b82265c',1,'StringValueCell::getValueAsString()'],['../classDoubleValueCell.html#a07c5fa871fac86915a9f23a1fb7f3dad',1,'DoubleValueCell::getValueAsString()']]]
+];

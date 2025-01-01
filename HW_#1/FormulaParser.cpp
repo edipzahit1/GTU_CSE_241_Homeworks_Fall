@@ -121,7 +121,7 @@ double FormulaParser::evaluateSingleToken(string &singleToken, set<pair<int, int
     if (coordinates != pair<int, int>(-1, -1))
     {
         Cell *cell = spreadsheet.getCell(coordinates.first, coordinates.second);
-        auto content = cell->getContent();
+            auto content = cell->getContent();
 
         uniqueDependents.insert({cell->getRow(), cell->getCol()});
 

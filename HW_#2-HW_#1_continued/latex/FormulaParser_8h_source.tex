@@ -1,0 +1,67 @@
+\doxysection{Formula\+Parser.\+h}
+\hypertarget{FormulaParser_8h_source}{}\label{FormulaParser_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ PARSE\_EM}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ PARSE\_EM}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}myvec.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}myset.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <set>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{enum\ class}\ FunctionType}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ SUM,\ \ \ \ }
+\DoxyCodeLine{00018\ \ \ \ \ AVER,\ \ \ }
+\DoxyCodeLine{00019\ \ \ \ \ STDDEV,\ }
+\DoxyCodeLine{00020\ \ \ \ \ MAX,\ \ \ \ }
+\DoxyCodeLine{00021\ \ \ \ \ MIN,\ \ \ \ }
+\DoxyCodeLine{00022\ \ \ \ \ INVALID\ }
+\DoxyCodeLine{00023\ \};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classSpreadsheet}{Spreadsheet}};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classFormulaParser}{FormulaParser}}}
+\DoxyCodeLine{00032\ \{}
+\DoxyCodeLine{00033\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{classFormulaParser_ad44fd12e82512c1fea04cfca8eac706b}{FormulaParser}}(\mbox{\hyperlink{classSpreadsheet}{Spreadsheet}}\ *sheet)\ :\ spreadsheet(sheet)\ \{\}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classFormulaParser_a8e448edc5569a3a8f1a35bae7ab54483}{parseAndEvaluate}}(std::string\ \&formula,\ std::pair<int,\ int>\ coordinates,\ \mbox{\hyperlink{classspc_1_1myvec}{spc::myvec}}<std::pair<int,\ int>>\ \&dependentCells);}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classFormulaParser_a0bba44fefe33efcfaffb7d7afb86c5d7}{autoCalculate}}(std::pair<int,\ int>\ coordinate);}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00056\ \ \ \ \ \mbox{\hyperlink{classSpreadsheet}{Spreadsheet}}\ *spreadsheet;\ }
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00063\ \ \ \ \ \mbox{\hyperlink{classspc_1_1myvec}{spc::myvec<std::string>}}\ parsePlusAndMinus(\textcolor{keyword}{const}\ std::string\ \&formula)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00070\ \ \ \ \ \mbox{\hyperlink{classspc_1_1myvec}{spc::myvec<std::string>}}\ parseMultpAndDiv(\textcolor{keyword}{const}\ std::string\ \&token)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{double}\ evaluateMultpAndDivToken(std::string\ \&token,\ \mbox{\hyperlink{classspc_1_1myset}{spc::myset}}<std::pair<int,\ int>>\ \&uniqueDependents)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{bool}\ isValidRange(\textcolor{keyword}{const}\ std::string\ \&range)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00092\ \ \ \ \ std::pair<int,\ int>\ getCellReference(\textcolor{keyword}{const}\ std::string\ \&token)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00099\ \ \ \ \ FunctionType\ getFunctionType(std::string\ \&token)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordtype}{bool}\ isValue(\textcolor{keyword}{const}\ std::string\ \&token)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordtype}{double}\ evaluateSingleToken(std::string\ \&singleToken,\ \mbox{\hyperlink{classspc_1_1myset}{spc::myset}}<std::pair<int,\ int>>\ \&uniqueDependents)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keywordtype}{double}\ SUM(std::pair<int,\ int>\ startPos,\ std::pair<int,\ int>\ endPos,\ \mbox{\hyperlink{classspc_1_1myset}{spc::myset}}<std::pair<int,\ int>>\ \&uniqueDependents)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keywordtype}{double}\ AVER(std::pair<int,\ int>\ startPos,\ std::pair<int,\ int>\ endPos,\ \mbox{\hyperlink{classspc_1_1myset}{spc::myset}}<std::pair<int,\ int>>\ \&uniqueDependents)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00141\ \ \ \ \ \textcolor{keywordtype}{double}\ STDDEV(std::pair<int,\ int>\ startPos,\ std::pair<int,\ int>\ endPos,\ \mbox{\hyperlink{classspc_1_1myset}{spc::myset}}<std::pair<int,\ int>>\ \&uniqueDependents)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00150\ \ \ \ \ \textcolor{keywordtype}{double}\ MAX(std::pair<int,\ int>\ startPos,\ std::pair<int,\ int>\ endPos,\ \mbox{\hyperlink{classspc_1_1myset}{spc::myset}}<std::pair<int,\ int>>\ \&uniqueDependents)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00159\ \ \ \ \ \textcolor{keywordtype}{double}\ MIN(std::pair<int,\ int>\ startPos,\ std::pair<int,\ int>\ endPos,\ \mbox{\hyperlink{classspc_1_1myset}{spc::myset}}<std::pair<int,\ int>>\ \&uniqueDependents)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00160\ \};}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00162\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

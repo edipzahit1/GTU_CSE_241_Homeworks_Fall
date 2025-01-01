@@ -1,0 +1,64 @@
+\doxysection{File\+Handler Class Reference}
+\hypertarget{classFileHandler}{}\label{classFileHandler}\index{FileHandler@{FileHandler}}
+
+
+A utility class for handling file operations for a \doxylink{classSpreadsheet}{Spreadsheet}.  
+
+
+
+
+{\ttfamily \#include $<$File\+Handler.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classFileHandler_a37e963ea11309471d504a0cba29b412c}{save\+To\+File}} (const std\+::string \&filename, const \mbox{\hyperlink{classSpreadsheet}{Spreadsheet}} \&spreadsheet)
+\begin{DoxyCompactList}\small\item\em Saves the current state of the spreadsheet to a file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFileHandler_a07e761027db0cc6b0c1e0c1ee83e7ebf}{load\+From\+File}} (const std\+::string \&filename, \mbox{\hyperlink{classSpreadsheet}{Spreadsheet}} \&spreadsheet)
+\begin{DoxyCompactList}\small\item\em Loads the state of the spreadsheet from a file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A utility class for handling file operations for a \doxylink{classSpreadsheet}{Spreadsheet}. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classFileHandler_a07e761027db0cc6b0c1e0c1ee83e7ebf}\label{classFileHandler_a07e761027db0cc6b0c1e0c1ee83e7ebf} 
+\index{FileHandler@{FileHandler}!loadFromFile@{loadFromFile}}
+\index{loadFromFile@{loadFromFile}!FileHandler@{FileHandler}}
+\doxysubsubsection{\texorpdfstring{loadFromFile()}{loadFromFile()}}
+{\footnotesize\ttfamily void File\+Handler\+::load\+From\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename,  }\item[{\mbox{\hyperlink{classSpreadsheet}{Spreadsheet}} \&}]{spreadsheet }\end{DoxyParamCaption})}
+
+
+
+Loads the state of the spreadsheet from a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The name of the file to load from. \\
+\hline
+{\em spreadsheet} & The \doxylink{classSpreadsheet}{Spreadsheet} object to populate. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classFileHandler_a37e963ea11309471d504a0cba29b412c}\label{classFileHandler_a37e963ea11309471d504a0cba29b412c} 
+\index{FileHandler@{FileHandler}!saveToFile@{saveToFile}}
+\index{saveToFile@{saveToFile}!FileHandler@{FileHandler}}
+\doxysubsubsection{\texorpdfstring{saveToFile()}{saveToFile()}}
+{\footnotesize\ttfamily void File\+Handler\+::save\+To\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename,  }\item[{const \mbox{\hyperlink{classSpreadsheet}{Spreadsheet}} \&}]{spreadsheet }\end{DoxyParamCaption})}
+
+
+
+Saves the current state of the spreadsheet to a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The name of the file to save to. \\
+\hline
+{\em spreadsheet} & The \doxylink{classSpreadsheet}{Spreadsheet} object to save. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+File\+Handler.\+h\item 
+File\+Handler.\+cpp\end{DoxyCompactItemize}

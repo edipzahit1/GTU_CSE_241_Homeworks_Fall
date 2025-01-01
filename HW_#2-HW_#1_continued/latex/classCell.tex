@@ -1,0 +1,136 @@
+\doxysection{Cell Class Reference}
+\hypertarget{classCell}{}\label{classCell}\index{Cell@{Cell}}
+
+
+{\ttfamily \#include $<$Cell.\+h$>$}
+
+
+
+Inheritance diagram for Cell\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCell__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCell_a5d864179105fe90ff5caed1e100ea15b}{Cell}} (int r, int c)
+\item 
+virtual \mbox{\hyperlink{classCell_a246d54ef2e569f97000fe94f5524e7ba}{\texorpdfstring{$\sim$}{\string~}\+Cell}} ()=default
+\item 
+void \mbox{\hyperlink{classCell_afdef300bb2c5d094486a3719b47f2083}{set\+Letter\+Representation}} (int r, int c)
+\item 
+std\+::string \mbox{\hyperlink{classCell_a43a4a18bf3e09058fe8103949b4d91af}{get\+Letter\+Representation}} () const
+\item 
+int \mbox{\hyperlink{classCell_ac539fe0f0330ca0e437180e1a5b59162}{get\+Row}} () const
+\item 
+int \mbox{\hyperlink{classCell_a25280a2e9a8df8a51092c94737f44d58}{get\+Col}} () const
+\item 
+double \mbox{\hyperlink{classCell_aa41edda20ea178d105fb3d57d379aea4}{get\+Cell\+Value\+As\+Double}} ()
+\item 
+virtual std\+::string \mbox{\hyperlink{classCell_a9b851e4caf142ca6fd72ada2e7505b6b}{get\+Value\+As\+String}} () const =0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract base class representing a generic spreadsheet cell. Provides common functionality for all cell types, including row and column management and letter representation for cell coordinates. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classCell_a5d864179105fe90ff5caed1e100ea15b}\label{classCell_a5d864179105fe90ff5caed1e100ea15b} 
+\index{Cell@{Cell}!Cell@{Cell}}
+\index{Cell@{Cell}!Cell@{Cell}}
+\doxysubsubsection{\texorpdfstring{Cell()}{Cell()}}
+{\footnotesize\ttfamily Cell\+::\+Cell (\begin{DoxyParamCaption}\item[{int}]{r,  }\item[{int}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor for \doxylink{classCell}{Cell}. 
+\begin{DoxyParams}{Parameters}
+{\em r} & Row index (must be non-\/negative). \\
+\hline
+{\em c} & Column index (must be non-\/negative). \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if row or column is negative. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classCell_a246d54ef2e569f97000fe94f5524e7ba}\label{classCell_a246d54ef2e569f97000fe94f5524e7ba} 
+\index{Cell@{Cell}!````~Cell@{\texorpdfstring{$\sim$}{\string~}Cell}}
+\index{````~Cell@{\texorpdfstring{$\sim$}{\string~}Cell}!Cell@{Cell}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Cell()}{\string~Cell()}}
+{\footnotesize\ttfamily virtual Cell\+::\texorpdfstring{$\sim$}{\string~}\+Cell (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+Virtual destructor for polymorphic behavior. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classCell_aa41edda20ea178d105fb3d57d379aea4}\label{classCell_aa41edda20ea178d105fb3d57d379aea4} 
+\index{Cell@{Cell}!getCellValueAsDouble@{getCellValueAsDouble}}
+\index{getCellValueAsDouble@{getCellValueAsDouble}!Cell@{Cell}}
+\doxysubsubsection{\texorpdfstring{getCellValueAsDouble()}{getCellValueAsDouble()}}
+{\footnotesize\ttfamily double Cell\+::get\+Cell\+Value\+As\+Double (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Retrieves the cell\textquotesingle{}s value as a double. This method may throw if the value is non-\/numeric. \begin{DoxyReturn}{Returns}
+\doxylink{classCell}{Cell} value as double. 
+\end{DoxyReturn}
+\Hypertarget{classCell_a25280a2e9a8df8a51092c94737f44d58}\label{classCell_a25280a2e9a8df8a51092c94737f44d58} 
+\index{Cell@{Cell}!getCol@{getCol}}
+\index{getCol@{getCol}!Cell@{Cell}}
+\doxysubsubsection{\texorpdfstring{getCol()}{getCol()}}
+{\footnotesize\ttfamily int Cell\+::get\+Col (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Retrieves the column index of the cell. \begin{DoxyReturn}{Returns}
+Column index. 
+\end{DoxyReturn}
+\Hypertarget{classCell_a43a4a18bf3e09058fe8103949b4d91af}\label{classCell_a43a4a18bf3e09058fe8103949b4d91af} 
+\index{Cell@{Cell}!getLetterRepresentation@{getLetterRepresentation}}
+\index{getLetterRepresentation@{getLetterRepresentation}!Cell@{Cell}}
+\doxysubsubsection{\texorpdfstring{getLetterRepresentation()}{getLetterRepresentation()}}
+{\footnotesize\ttfamily std\+::string Cell\+::get\+Letter\+Representation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Retrieves the letter representation of the cell. \begin{DoxyReturn}{Returns}
+String representing the cell\textquotesingle{}s location (e.\+g., "{}\+A1"{}). 
+\end{DoxyReturn}
+\Hypertarget{classCell_ac539fe0f0330ca0e437180e1a5b59162}\label{classCell_ac539fe0f0330ca0e437180e1a5b59162} 
+\index{Cell@{Cell}!getRow@{getRow}}
+\index{getRow@{getRow}!Cell@{Cell}}
+\doxysubsubsection{\texorpdfstring{getRow()}{getRow()}}
+{\footnotesize\ttfamily int Cell\+::get\+Row (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Retrieves the row index of the cell. \begin{DoxyReturn}{Returns}
+Row index. 
+\end{DoxyReturn}
+\Hypertarget{classCell_a9b851e4caf142ca6fd72ada2e7505b6b}\label{classCell_a9b851e4caf142ca6fd72ada2e7505b6b} 
+\index{Cell@{Cell}!getValueAsString@{getValueAsString}}
+\index{getValueAsString@{getValueAsString}!Cell@{Cell}}
+\doxysubsubsection{\texorpdfstring{getValueAsString()}{getValueAsString()}}
+{\footnotesize\ttfamily virtual std\+::string Cell\+::get\+Value\+As\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Pure virtual method to retrieve the cell\textquotesingle{}s value as a string. \begin{DoxyReturn}{Returns}
+\doxylink{classCell}{Cell} value as a string. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classFormulaCell_af37e8bbf3616fe567c475b56013c7087}{Formula\+Cell}}, \mbox{\hyperlink{classIntValueCell_a16800d9bffcf14af8aab43861ee0386e}{Int\+Value\+Cell}}, \mbox{\hyperlink{classStringValueCell_aa1c9a8d6f0b56b8e60718f084b82265c}{String\+Value\+Cell}}, and \mbox{\hyperlink{classDoubleValueCell_a07c5fa871fac86915a9f23a1fb7f3dad}{Double\+Value\+Cell}}.
+
+\Hypertarget{classCell_afdef300bb2c5d094486a3719b47f2083}\label{classCell_afdef300bb2c5d094486a3719b47f2083} 
+\index{Cell@{Cell}!setLetterRepresentation@{setLetterRepresentation}}
+\index{setLetterRepresentation@{setLetterRepresentation}!Cell@{Cell}}
+\doxysubsubsection{\texorpdfstring{setLetterRepresentation()}{setLetterRepresentation()}}
+{\footnotesize\ttfamily void Cell\+::set\+Letter\+Representation (\begin{DoxyParamCaption}\item[{int}]{r,  }\item[{int}]{c }\end{DoxyParamCaption})}
+
+Sets the letter representation for the cell based on its coordinates. 
+\begin{DoxyParams}{Parameters}
+{\em r} & Row index. \\
+\hline
+{\em c} & Column index. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Cell.\+h\item 
+Cell.\+cpp\end{DoxyCompactItemize}
