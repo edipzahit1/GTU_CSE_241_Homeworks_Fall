@@ -1,0 +1,76 @@
+@startuml
+
+class Spreadsheet {
+    - int rows
+    - int cols
+    - int currentRow
+    - int currentCol
+    - AnsiTerminal terminal
+    - unique_ptr<unique_ptr<shared_ptr<Cell>[]>[]> sheet
+    + setRows(int rows)
+    + setCols(int cols)
+    + getRows() : int
+    + getCols() : int
+    + getCell(int row, int col) : const Cell*
+    + editCell(int row, int col, const string& value)
+    + printDisplay()
+    + clearDisplay()
+    + moveCursorUp()
+    + moveCursorDown()
+    + moveCursorLeft()
+    + moveCursorRight()
+    + editCurrentCell(const string& value)
+    + updateDisplay()
+}
+
+class AnsiTerminal {
+    - struct termios original_tio
+    + printAt(int row, int col, const string& text)
+    + printInvertedAt(int row, int col, const string& text)
+    + clearScreen()
+    + getKeystroke() : char
+    + getSpecialKey() : char
+}
+
+abstract class Cell {
+    + getValue() : string
+    + setValue(const string& value)
+}
+
+class FormulaCell {
+    - string formula
+    + getValue() : string
+    + setValue(const string& value)
+}
+
+class ValueCell<T> {
+    - T data
+    + getValue() : string
+    + setValue(const string& value)
+    - convertFromString(const string& value) : T
+}
+
+class DoubleValueCell {
+    + DoubleValueCell(double value = 0.0)
+    + ~DoubleValueCell()
+}
+
+class IntValueCell {
+    + IntValueCell(int value = 0)
+    + ~IntValueCell()
+}
+
+class StringValueCell {
+    + StringValueCell(const string& value = "")
+    + ~StringValueCell()
+}
+
+Spreadsheet o-- AnsiTerminal
+Spreadsheet *-- Cell
+Cell <|-- FormulaCell
+Cell <|-- ValueCell
+ValueCell <|-- DoubleValueCell
+ValueCell <|-- IntValueCell
+ValueCell <|-- StringValueCell
+
+@enduml
